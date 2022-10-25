@@ -26,6 +26,9 @@ spring fasteners.
 30 minutes later, cube almost finished, forgot thread locker. Fuck. Anyway, time
 to get the DIN angle for fine tuning, and the thread locker. Undo all the screws
 again. Need to go boudlering though, and threadlocker would set a time limit on
-assembly and squaring. Stopping for now.
+assembly and squaring. Stopping frame assembly for now.
 
 Total time taken during frame assembly so far: 45min.
+
+15 minutes of unpacking linear rails, finding a suitable glass, and putting the
+sliders into IPA. Now I will go bouldering for real, promise.
