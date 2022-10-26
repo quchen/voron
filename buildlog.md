@@ -2,12 +2,12 @@
 
 Package arrived. Got Pif parts in blue and yellow.
 
-PICTURE: overview over the box
+![](pictures/2022-10-25_1_box-overview.jpg)
 
 Around 1 m² of desk space cleaned, my trusty Prusa 2.5 went onto the gas oven
 (turned off). Build area cleaned, let’s go!
 
-PICTURE: build space empty and ready to go
+![](pictures/2022-10-25_2_build-space.jpg)
 
 Time: 15 min
 
@@ -18,7 +18,7 @@ this Git repo. 5min
 
 Extrusions sorted and labeled. 10min
 
-PICTURE: sorted extrusions
+![](pictures/2022-10-25_3_sorted-extrusions.jpg)
 
 Adding screws to A extrusions. I remember my friend telling me about the _frame
 spring fasteners_ that they forgot initially. Time to open the
@@ -33,7 +33,7 @@ assembly and squaring. Stopping frame assembly for now.
 15 min of unpacking linear rails, finding a suitable glass, and putting the
 sliders into IPA. Now I will go bouldering for real, promise.
 
-PICTURE: bathing sliders
+![](pictures/2022-10-25_4_bathing-sleds.jpg)
 
 Time taken: 1 h, total 1.25 h
 
@@ -66,5 +66,7 @@ measure, and going from there with the caliper. Distance between the extrusions
 is 130 mm ± <0.2 mm, way more accurate than I need. I do have an offset by 0.5
 mm to the left though, which I will worry about when installing the bed, which
 should give me much more practical guidance.
+
+![](pictures/2022-10-25_5_frame-done.jpg)
 
 Time taken: 1.75 h, for a total of 3 h so far.
