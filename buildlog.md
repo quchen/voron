@@ -70,3 +70,18 @@ should give me much more practical guidance.
 ![](pictures/2022-10-25_5_frame-done.jpg)
 
 Time taken: 1.75 h, for a total of 3 h so far. 
+
+
+# 2022-10-26
+
+15min rails fetten
+
+45min Rails einbauen
+
+15min Boden und DIN-Rails. Erst falsch montiert, Rails sind senkrecht zu Bettrails.
+
+30min heat set inserts. Woah this is fun!
+
+45min ersten Fuß bauen. Erst auf der falschen Seite das ganze Teil angebracht, später dann für den Fuß die M5er Mutter vergessen. Beides aber keine großen Fehler, ließen sich schnell korrigieren.
+
+2h30m Session
