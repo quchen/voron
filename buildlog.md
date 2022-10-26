@@ -16,7 +16,7 @@ this Git repo. 5min
 
 ## Frame assembly
 
-Extrusions sorted and labeled. 10min
+Extrusions sorted and labeled. 10 min
 
 ![](pictures/2022-10-25_3_sorted-extrusions.jpg)
 
@@ -47,10 +47,10 @@ of movement, only one of the rails is good (sled moves under its own weight),
 the rest is average, except for one of the MGN9H, which is quite stiff. Maybe
 upgrade to Hiwin later (for a hefty premium …). 20 min for this.
 
-Another 45 min later, the frame is fully assembled, and all corners are
+Another 45 min later, the frame is fully assembled, and all corners are
 electrically connected (diamond filing the contact surfaces). Used a DIN norm
 angle to make sure the mechanical assembly is flush. Upper/lower Diagonals are
-all 579 mm, left/right/front/back ones 594 mm without further adjustment. Kudos
+all 579 mm, left/right/front/back ones 594 mm without further adjustment. Kudos
 to the precision work by MagicPhoenix! Used my DIN angle to check for 90°; most
 angles are perfect, some are a tiny bit off so that I can
 audibly-but-not-visibly move the angle. Good enough.
@@ -63,10 +63,10 @@ when I use the hex key with the worse lever, my finger hurts when turning them.
 
 Installed the heat bed rails by estimating the center of the bed with a tape
 measure, and going from there with the caliper. Distance between the extrusions
-is 130 mm ± <0.2 mm, way more accurate than I need. I do have an offset by 0.5
-mm to the left though, which I will worry about when installing the bed, which
+is 130 mm ± <0.2 mm, way more accurate than I need. I do have an offset by 0.5 mm
+to the left though, which I will worry about when installing the bed, which
 should give me much more practical guidance.
 
 ![](pictures/2022-10-25_5_frame-done.jpg)
 
-Time taken: 1.75 h, for a total of 3 h so far.
+Time taken: 1.75 h, for a total of 3 h so far. 
