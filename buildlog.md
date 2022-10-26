@@ -35,9 +35,7 @@ sliders into IPA. Now I will go bouldering for real, promise.
 
 ![](pictures/2022-10-25_4_bathing-sleds.jpg)
 
-Time taken: 1 h, total 1.25 h
-
----
+Time taken: 1 h, total 1h15m.
 
 Reassembled the linear rails while drenching them in IPA. Did not expect the
 MGN9H to be _that_ hard to get on the rail, MGN12H is a piece of cake in
@@ -69,19 +67,83 @@ should give me much more practical guidance.
 
 ![](pictures/2022-10-25_5_frame-done.jpg)
 
-Time taken: 1.75 h, for a total of 3 h so far. 
+Time taken: 1h45m, for a total of 3 h so far. 
 
 
-# 2022-10-26
+# 2022-10-26: Frame and gantry
 
-15min rails fetten
+## Z linear rails
 
-45min Rails einbauen
+Spent 15 minutes greasing the rails with standard grease. It’s quite hard to get
+it in there, the syringe tip didn’t work (inject it from below through a rail
+hole). Just made a little mess and hoped enough would be on the bearings.
 
-15min Boden und DIN-Rails. Erst falsch montiert, Rails sind senkrecht zu Bettrails.
+The next 45min I installed the rails. I got one nut the wrong way round; it’s
+not noticeable but _I know_. It’ll be my secret. Nothing special here, just
+juggling with Loctite hardening, and aligning them quick enough. The plastic
+rail adjustment clamps are a blessing. Oh and my Yubikey is 3.5mm thick, so I
+used that as a spacer for the gap at the bottom of the Z rails.
 
-30min heat set inserts. Woah this is fun!
+![](pictures/2022-10-26_1_rail-installation.jpg)
 
-45min ersten Fuß bauen. Erst auf der falschen Seite das ganze Teil angebracht, später dann für den Fuß die M5er Mutter vergessen. Beides aber keine großen Fehler, ließen sich schnell korrigieren.
+# DIN rails
 
-2h30m Session
+15 minutes for installing the floor and DIN rails. Initially I installed the
+rails parallel to the bed rails, but they actually have to be perpendicular.
+Takes a minute to change that though, so no problem.
+
+![](pictures/2022-10-26_2_din-rails.jpg)
+
+The next 30 minutes were pure bliss: heat inserts. It’s amazing. I hope there
+are many more. 250 °C on the soldering iron, slowly pushing it in, then flushing
+the surface with a flat piece of plastic for a couple of seconds. All inserts
+are _perfect_. I’m proud.
+
+![](pictures/2022-10-26_3_heat-inserts.jpg)
+
+The first foot for the frame to stand on took 45 minutes. A couple of small
+mistakes were easy to remedy, namely I screwed the foot onto the wrong side of
+the frame, and also I forgot including the M5 nut for the plastic foot’s foot to
+be fastened to. Neither took more than a minute to fix.
+
+![](pictures/2022-10-26_4_feet.jpg)
+
+Eyedler are super easy to build and install, maybe 20 minutes. I don’t have a
+ball hex key though, so I won’t be able to fasten the belts thanks to their
+design.
+
+![](pictures/2022-10-26_5_eyedlers.jpg)
+
+2h30m Session; the frame is now super done, for a total of 5h30m.
+
+## Gantry
+
+Gantry time! At first I thought Pif had forgotten the B idlers, but the parts
+just look different, and everything was there. A couple of heat inserts, lots of
+screws that I don’t fasten yet because I don’t know whether I should wait for
+the wedding with the frame or not.
+
+![](pictures/2022-10-26_6_gantry-halfway.jpg)
+
+This is also when I noticed the reason my Loctite doesn’t yield drops without
+extensive begging because – you won’t believe it – it was empty. Visited my
+friend to get backup, and also some useful tips for the coming steps. 60 minutes
+so far.
+
+2h more gantry assembly. Lots of screws are only tightened a bit, the goal being
+joining it with the frame and then working out where everything should be.
+
+![](pictures/2022-10-26_7_gantry-before-wedding.jpg)
+
+It’s now 0:20, the gantry is done, time for the wedding!
+
+0:40 Wedding is done, but I noticed I misunderstood the Z belts: I should
+already have added them on lower clamps. That’s going to be finnicky; I think
+it’ll be easier to take out the gantry again, fixing the belts, and while I’m at
+it tighten some screws. I’ll really have to remember to double-check all the
+gantry screws later.
+
+![](pictures/2022-10-26_8_gantry-inserted.jpg)
+
+The gantry took me around 3h30m so far, for a total of 9h assembly at this
+point.
