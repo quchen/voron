@@ -217,3 +217,17 @@ spent 2h on the whole belting topic, with a total of 11h15m so far.
 
 Oh, plus five minutes to tension the gantry bolts, almost forgot! And lol quite
 a few of them were _loose_.
+
+
+
+# 2022-10-28
+
+## Clockwork
+
+Oh yeah more heat inserts. Start at 17:45.
+19:06, done with the clockwork. It’s called that for a reason it turns out.
+- Heat inserts hard to insert: not flush (recessed, hard to access), and stuff is in the way. Melted a bit of (invisible) plastic.
+- Big gear must not touch plastic. Moved it inwards as much as possible. Applied threadlocker to tiny grub screw and sealed it.
+- Pics to come.
+- Trusty Traxxas 50k (thanks cubing) used for lubrication
+- Alignment of parts mostly easy
