@@ -231,3 +231,19 @@ Oh yeah more heat inserts. Start at 17:45.
 - Pics to come.
 - Trusty Traxxas 50k (thanks cubing) used for lubrication
 - Alignment of parts mostly easy
+- Closing latch secured with M3x8 SHCS (does fit) instead of M3x6 FHCS (does not fit)
+
+
+# 2022-10-31
+
+
+- Added hotend. Used smaller SHCS M3x8 screws from the hotend bag, the heads of the main kit were too big
+- PTFE tube sticks out 10.89mm
+- Part cooling fan taken apart, bit tricky. Cut off the »ears« with side cutters
+  as flush as I could, then filed them down some more. Doesn’t have to be super
+  flat, there is some tolerance in the SB head.
+- Klicky cable: straight up through the »belts gap«, before installing Clockwork!
+- Hotend part holds on its own, enough to install Stealthburner
+
+
+1h30, mechanical build done
