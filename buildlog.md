@@ -290,3 +290,56 @@ Bolted on the front, and mechanical assembly is done! It looks like a Voron now!
 ![](pictures/2022-10-31_5_mechanical-assembly-done.jpg)
 
 With 1h30m in this session, I spent 14h15m on mechanical assembly.
+
+
+# 2022-11-01
+
+## Assemble mounts
+
+Raspi, Octopus, SSR: just screwed on the holds without washers. Uneventful. The
+power switch is hard to put on the frame when the switch/inlet are put in, so I
+had to un-screw it, mount it on the T-nut, and reinsert it. Sexbolt is super
+easy to assemble; I added some Traxxas 50k to lubricate it, and of course used
+Loctite. The main issue was with the big PSU, it just wouldn’t fit on the DIN
+rails. I found out I could simply unscrew the DIN rails, which have a couple of
+centimeters play left and right, and retighten them at a more useful distance.
+
+![](pictures/2022-10-31_6_mounts-attached.jpg)
+
+![](pictures/2022-10-31_7_power_inlet.jpg)
+
+![](pictures/2022-10-31_8_xy-endstops.jpg)
+
+![](pictures/2022-10-31_9_mounts-mounted.jpg)
+
+2h30m so far, 2h30m for electric assembly, and total build time 16h45m.
+
+## Octopus setup
+
+For the Octopus, I first removed all jumpers, as the manual says. I then set all
+fans and the probe input to 24V and added the drivers. Should I fry the board,
+here are pictures of the electrical setup for later reference.
+
+![](pictures/2022-10-31_10_octopus-jumpers.jpg)
+
+![](pictures/2022-10-31_11_octopus-with-drivers.jpg)
+
+The gap in the drivers line is because motor 2 (0-based indexing) has two slots,
+so I’ve skipped motor 2.2 and only used 2.1.
+
+This step took me around 20min, but I also watched a video on how to assemble
+the heatbed which I still have to add, bringing the electrical part to 3h, with
+a total build time of 17h15m.
+
+## Wiring
+
+Wiring is a pain! I spent 1h15m on trying to figure out the pieces of shit UK
+clamps, only to realize that I bought Wago clamps for exactly the same purpose.
+I didn’t have the mounting clamp handy, so I printed it in PLA, to be replaced
+by an ABS version later. I’ve opted for the extrusion mount (instead of the
+DIN-based one) because it seems easier to use, at least until I know where the
+wires are running, and where I have space left on the DIN rails. Since I’ll
+exchange the PLA part with ABS later anyway, I can use that opportunity to
+decide for the other design, should I want to.
+
+4h15m on electrical thus far, total build time 18h.
