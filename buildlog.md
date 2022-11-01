@@ -331,7 +331,7 @@ This step took me around 20min, but I also watched a video on how to assemble
 the heatbed which I still have to add, bringing the electrical part to 3h, with
 a total build time of 17h15m.
 
-## Wiring
+## Wiring AC, part 1
 
 Wiring is a pain! I spent 1h15m on trying to figure out the pieces of shit UK
 clamps, only to realize that I bought Wago clamps for exactly the same purpose.
@@ -343,3 +343,64 @@ exchange the PLA part with ABS later anyway, I can use that opportunity to
 decide for the other design, should I want to.
 
 4h15m on electrical thus far, total build time 18h.
+
+
+
+## Intermezzo: heatbed
+
+I’ve never glued on a heatbed, so here goes nothing! Cleaned the cast aluminium
+plate with IPA until _nothing_ was visble on the cloth anymore, then peeled off
+a couple of cm of the adhesive cover. Put the entire magnetic sheet on the
+surface for alignment, with the partially peeled off cover providing some
+resistance so the glue doesn’t stick already. When I was happy with the
+alignment (each side a bit wider than the actual aluminium, to be cut off
+later), I massaged inside out, with my soldering tip holder plastic piece. It’s
+quite the utility, doing this and also helping me with inserting heat inserts
+flush! After 15min I was done, no bubble to be seen. I put the result upside
+down onto the foam packaging I got the printer parts in, so that the weight of
+the plate can help with a bit of pressure when curing.
+
+![](pictures/2022-10-31_12_magnetic-sheet.jpg)
+
+Next step, the heat sheet. Pretty much the same procedure, same alignment and
+partially peeling off tricks, same 15min.
+
+![](pictures/2022-10-31_13_bed-heater.jpg)
+
+I must say, I think I did this quite well for the first time. No bubbles to be
+seen, very symmetric. Since this wasn’t really part of electrical assembly, I’m
+leaving that total at 4h15, but the total build time increases to 18h30m.
+
+
+## Wiring AC, part 2
+
+Meanwhile, the Wago mount clamp has finished printing, time to continure wiring!
+Up to a couple of cables that were too short and constrained my choice of
+location for some of the parts, everything went smoothly. Thank you Wago.
+
+Turned on power, the switch works, and the green status LEDs of the PSUs light
+up as well. 30min (total wiring 4h45m, total 19h).
+
+![](pictures/2022-10-31_14_thanks-wago.jpg)
+
+For the DC circuit, it looks like the cable to connect both V- of the PSU’s is
+missing. I’ll have to remember adding this later!
+
+The cable routing is a mess, I’m not sure the cable ducts would be an
+improvement though, since space is super limited. And it’s going to get much
+worse once the printing wiring is added!
+
+A couple of things are still missing in the power circuits:
+
+1. Grounding the frame and the DIN rails
+2. Connecting both PSU’s V- outputs
+
+Other open questions include what the purpose of the BED_POWER connector on the
+Octopus is for, since I thought I was using a SSR for providing power from DC,
+controlled via the BED_OUT terminal.
+
+Here’s a picture of the current state for your enjoyment.
+
+1h more spent on wiring, so we’re at 5h45m electrical, and 20h total.
+
+![](pictures/2022-10-31_15_ac-dc.jpg)
