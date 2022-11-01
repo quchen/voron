@@ -212,38 +212,81 @@ much more extensive) great guide that I’ll revisit at a later point.
 
 [gsq]: https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/voron_v2_gantry_squaring.md
 
-Taking some reading, playing around, and writing this text into account, I’ve
-spent 2h on the whole belting topic, with a total of 11h15m so far.
-
 Oh, plus five minutes to tension the gantry bolts, almost forgot! And lol quite
 a few of them were _loose_.
 
+Taking some reading, playing around, and writing this text into account, I’ve
+spent 2h on the whole belting topic, with a total of 11h15m so far.
 
-
-# 2022-10-28
+# 2022-10-28 Print head, part 1
 
 ## Clockwork
 
-Oh yeah more heat inserts. Start at 17:45.
-19:06, done with the clockwork. It’s called that for a reason it turns out.
-- Heat inserts hard to insert: not flush (recessed, hard to access), and stuff is in the way. Melted a bit of (invisible) plastic.
-- Big gear must not touch plastic. Moved it inwards as much as possible. Applied threadlocker to tiny grub screw and sealed it.
-- Pics to come.
-- Trusty Traxxas 50k (thanks cubing) used for lubrication
-- Alignment of parts mostly easy
-- Closing latch secured with M3x8 SHCS (does fit) instead of M3x6 FHCS (does not fit)
+More heat inserts, yippee! Although I must say the design is much less friendly.
+Some inserts had shallow sockets so the soldering tip penetrated the plastic,
+some were hard to reach without melting other parts. None of the mistakes I made
+are visible from the outside though, and even if they were they’re very small.
 
+![](pictures/2022-10-28_1_heat-inserts.jpg)
 
-# 2022-10-31
+The big gear is supposed to not touch plastic; I therefore moved it inwards as
+much as I could. The cost of this is reduced overlap with the driving motor
+gear, but we’re talking about less than a mm here on a motor that does not
+require much power anyway; it drives filament after all, not a ship’s propeller.
 
+![](pictures/2022-10-28_2_clockwork-half-assembled.jpg)
 
-- Added hotend. Used smaller SHCS M3x8 screws from the hotend bag, the heads of the main kit were too big
-- PTFE tube sticks out 10.89mm
-- Part cooling fan taken apart, bit tricky. Cut off the »ears« with side cutters
-  as flush as I could, then filed them down some more. Doesn’t have to be super
-  flat, there is some tolerance in the SB head.
-- Klicky cable: straight up through the »belts gap«, before installing Clockwork!
-- Hotend part holds on its own, enough to install Stealthburner
+I lubricated the passive extruder gear with trusty Traxxas 50k, a silicon-based
+greased that is friendly to plastic, as my collection of Rubik’s Cubes can
+attest to. Alignment of parts was pretty easy. I deviated from the manual by
+securing the closing latch with a M3x8 SHCS (does fit) instead of M3x6 FHCS
+(does not fit) screw.
 
+![](pictures/2022-10-28_3_clockwork-assembled.jpg)
 
-1h30, mechanical build done
+This step took 1h30m. I no longer wonder why it’s called the clockwork, because
+everything is hard to reach and see. Maybe also the big gear. Anyway, 12h45m
+build time so far.
+
+# 2022-10-31 Print head, part 2
+
+## Hotend
+
+## Stealthburner
+
+I added the hotend; the orientation is such that the beveled end is facing the
+front panel. Cable routing required some small amount of force; orienting the
+heater makes the cables fall into place more naturally. I had to use the smaller
+SHCS M3x8 screws from the hotend bag, the heads of the main kit were too big and
+would not fit the four holes in the plastic part. I cut the PTFE tube to stick
+out 10.9mm (should be 11mm), but I think that’s close enough. The socket is
+designed to hold this whole part on its own, at least enough for adding the
+front later. No zipties had to be used to temporarily hold it in place.
+
+![](pictures/2022-10-31_1_hotend-added.jpg)
+
+Up next, LED insertion. Smooth sailing; the cables were a bit long, but easily bent into the plastic gaps.
+
+![](pictures/2022-10-31_2_stealthburner-led-cables.jpg)
+
+Taking apart the part cooling fan was a bit tricky, but pushing the latches with
+my tweezers won after a couple of attempts. I cut off the ears with side
+cutters, and filed them down to be somewhat flush. The part doesn’t have to be
+super flat, there is some tolerance in the SB head. When staring at the fan from
+the front long enough it might not be 100% centered, which might be due to the
+non-perfect flush-sanding, but I’ll leave this for a future modding session.
+
+![](pictures/2022-10-31_3_fan-modding.jpg)
+
+The Klicky probe is easy to install; I did not notice the right way to route its
+cable is straight up past the belts and then into a groove made for just that,
+and considered just routing it outside. The Voron devs thought of everything it
+seems!
+
+![](pictures/2022-10-31_4_klicky-probe.jpg)
+
+Bolted on the front, and mechanical assembly is done! It looks like a Voron now!
+
+![](pictures/2022-10-31_5_mechanical-assembly-done.jpg)
+
+With 1h30m in this session, I spent 14h15m on mechanical assembly.
