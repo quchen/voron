@@ -404,3 +404,16 @@ Here’s a picture of the current state for your enjoyment.
 1h more spent on wiring, so we’re at 5h45m electrical, and 20h total.
 
 ![](pictures/2022-10-31_15_ac-dc.jpg)
+
+# Errors to correct next session!
+
+- Misunderstood bed-out. bed_power is passed on to bed_out, so it needs ac.
+  motor_power is only needed when powering the motors at a different voltage,
+  which I am not (24V both motors and board) so it is left unconnected. I’ll
+  have to find a way to tell the board of this choice though. -> it’s a pro feature, see https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-Pro#warning-for-octopus-pro
+- Other errors: the gap in the drivers is wrong! There are 9 outputs with motor
+  driver 2 having 2, but the drivers themselves are gap-less.
+- Pro docs here, stop reading non-pro, dummy! https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-Pro/blob/master/BTT_Octopus_pro_EN.pdf
+- Pinout diagram: https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-Pro/blob/master/Hardware/BIGTREETECH%20Octopus%20Pro%20-%20PIN.pdf
+- Grounding the frame and the DIN rails
+- Connecting both PSU’s V- outputs
