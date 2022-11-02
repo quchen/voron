@@ -442,7 +442,7 @@ In the last session, I made a couple of mistakes.
   convention rule, but what can I say, I’m just a theoretical physicist, and I
   promise to fix this later™.
 
-The whole thing took me an hour. Wiring total 6h45, total 21h.
+The whole thing took me an hour. Electronics total 6h45, total 21h.
 
 ![](pictures/2022-11-02_1_ac-dc-done.jpg)
 
@@ -458,3 +458,34 @@ LEDs begin to shine. No smoke, no noise.
 
 Mainsail! Woohooo!! (After connecting the LAN cable. I’ll set up Wifi for the
 Raspi next.)
+
+The next steps were spent fiddling with a hub that I haven’t used in ages. My
+desktop doesn’t have LAN, I forgot enabling Wifi on the Raspi, and my laptop
+doesn’t have its SSH key authorized by the Raspi.
+
+Once connection was established, the dashboard wouldn’t appear because some
+necessary-and-essential fields, such as the MCU, the kinematics, and motor pins
+weren’t specified. I used dummy values copied from an example config to quiet
+the errors.
+
+It then could not connect to the MCU. How could it, there is no firmware on the
+Octopus after all! I had to get a Micro SD, and followed the
+[Klipper documentation to flash the MCU][klipper-flash]. Simple enough, `make` a
+bit, then copy the compiled `klipper.bin` onto the SD, renaming it to
+`firmware.bin`.
+
+I’ll have to come up with a way to version the files. For now, I’m editing and
+copying them between host and Voron manually.
+
+[klipper-flash]: https://docs.vorondesign.com/build/software/octopus_klipper.html
+
+Lo and behold, I a dashboard! I did not dare push any buttons as to not use any
+of the nonsense pins I entered, but we’re in software land now! Well, save for
+all the wiring still to be done. The golem has arisen from the dead, while it is
+still paralyzed, it is able to think and communicate.
+
+![](pictures/2022-11-02_3_mainsail-dashboard-working.png)
+
+I’m counting this as verification of the electronics, which I have now spent a
+total of 2h30m on this session, for an electronics total of 7h15, and 22h30m
+total.
