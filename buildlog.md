@@ -292,7 +292,7 @@ Bolted on the front, and mechanical assembly is done! It looks like a Voron now!
 With 1h30m in this session, I spent 14h15m on mechanical assembly.
 
 
-# 2022-11-01
+# 2022-11-01 Kickoff for wiring
 
 ## Assemble mounts
 
@@ -325,7 +325,11 @@ here are pictures of the electrical setup for later reference.
 ![](pictures/2022-10-31_11_octopus-with-drivers.jpg)
 
 The gap in the drivers line is because motor 2 (0-based indexing) has two slots,
-so I’ve skipped motor 2.2 and only used 2.1.
+so I’ve skipped motor 2.2 and only used 2.1. **Note:** I later found out this
+was a incorrect, it is corrected in a later step! There are 8 driver slots for 8
+drivers, but there are 9 motor slots, and the driver in position 2 of 7
+(0-based) has two motor slots that can be driven by the same driver. It is valid
+wiring, looks awkward, and would at least not fry the board if done this way.
 
 This step took me around 20min, but I also watched a video on how to assemble
 the heatbed which I still have to add, bringing the electrical part to 3h, with
@@ -405,15 +409,52 @@ Here’s a picture of the current state for your enjoyment.
 
 ![](pictures/2022-10-31_15_ac-dc.jpg)
 
-# Errors to correct next session!
+# 2022-11-01: fixing mistakes and power wiring
 
-- Misunderstood bed-out. bed_power is passed on to bed_out, so it needs ac.
-  motor_power is only needed when powering the motors at a different voltage,
-  which I am not (24V both motors and board) so it is left unconnected. I’ll
-  have to find a way to tell the board of this choice though. -> it’s a pro feature, see https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-Pro#warning-for-octopus-pro
-- Other errors: the gap in the drivers is wrong! There are 9 outputs with motor
-  driver 2 having 2, but the drivers themselves are gap-less.
-- Pro docs here, stop reading non-pro, dummy! https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-Pro/blob/master/BTT_Octopus_pro_EN.pdf
-- Pinout diagram: https://github.com/bigtreetech/BIGTREETECH-OCTOPUS-Pro/blob/master/Hardware/BIGTREETECH%20Octopus%20Pro%20-%20PIN.pdf
-- Grounding the frame and the DIN rails
-- Connecting both PSU’s V- outputs
+In the last session, I made a couple of mistakes.
+
+1. I misunderstood the bed connectors of the Octopus. The correct way of wiring
+   is that the board routes `bed power` to `bed out` based on a Mosfet, and
+   controls heating this way.
+2. I also misunderstood `motor power`. This is only necessary if the bed power
+   is a different one than the board power. In my case, both are 24V (and not,
+   say, 48V for the motors), so I can just leave the `motor power` unconnected.
+   The jumpers next to the drivers near the edge are in _use board power for
+   motors_ position anyway. This wasn’t electrically wrong (phew!), but needed
+   additional cables to connect the `motor power` connector, so out it goes. In
+   a future mod, since I’m using the huge relais anyway, I could get rid of both
+   the bed connectors, and route some thermal regulator pin to the relais
+   directly, since it doesn’t need bed power for switching. The setup right now
+   is the one one might use when powering the bed directly from the Octopus
+   (with 24V).
+3. The gap between the drivers isn’t necessary. There are 9 motor outputs with
+  motor driver #2 (0-based) having 2, but the drivers themselves are gap-less. I
+  rearranged them neatly. The gap will instead be between the motor connectors.
+4. In general, I looked at the docs for the Octopus _1.x_, and not the Octopus
+  _Pro_. Oops. Not too bad at the moment, but would have me scratch my head
+  later when looking for specific pinouts.
+5. I did not ground the DIN rails or the metallic frame. I’m literally betting my
+  lifeee that none of the wiring is messed up (to an enormous degree, but
+  still).
+6. The V- outputs of the PSUs weren’t connected. They are now. Since I didn’t
+  have thick enough black/red cables, I tore apart a power socket cable, and
+  used brown/blue instead. I’m sure this violates some DIN, ISO or geneva
+  convention rule, but what can I say, I’m just a theoretical physicist, and I
+  promise to fix this later™.
+
+The whole thing took me an hour. Wiring total 6h45, total 21h.
+
+![](pictures/2022-11-02_1_ac-dc-done.jpg)
+
+Time for a last check of everything before flipping the power. There will either
+be smoke, no smoke but nothing useful, or I will be able to connect to Mainsail
+(which I previously installed on the Raspi).
+
+Flick.
+
+LEDs begin to shine. No smoke, no noise.
+
+![](pictures/2022-11-02_2_power-on.jpg)
+
+Mainsail! Woohooo!! (After connecting the LAN cable. I’ll set up Wifi for the
+Raspi next.)
