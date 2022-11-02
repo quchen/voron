@@ -1,0 +1,3 @@
+[submodule "manuals/octopus"]
+	path = manuals/octopus
+	url = git@github.com:bigtreetech/BIGTREETECH-OCTOPUS-Pro.git
