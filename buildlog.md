@@ -1,3 +1,12 @@
+# Voron 2.4 buildlog
+
+This is a technical diary AKA buildlog of me assembling a Voron 2.4r2, 250mm
+version.
+
+I try to add annotations where I make mistakes, but in general it’s good to
+double-check whether things I’ve described in a step are a good idea before
+copying them.
+
 # 2022-10-25
 
 Package arrived. Got Pif parts in blue and yellow.
@@ -387,7 +396,7 @@ up as well. 30min (total wiring 4h45m, total 19h).
 
 ![](pictures/2022-10-31_14_thanks-wago.jpg)
 
-For the DC circuit, it looks like the cable to connect both V- of the PSU’s is
+For the DC circuit, it looks like the cable to connect both V- of the PSUs is
 missing. I’ll have to remember adding this later!
 
 The cable routing is a mess, I’m not sure the cable ducts would be an
@@ -397,7 +406,7 @@ worse once the printing wiring is added!
 A couple of things are still missing in the power circuits:
 
 1. Grounding the frame and the DIN rails
-2. Connecting both PSU’s V- outputs
+2. Connecting the V- outputs of both PSUs
 
 Other open questions include what the purpose of the BED_POWER connector on the
 Octopus is for, since I thought I was using a SSR for providing power from DC,
@@ -428,21 +437,26 @@ In the last session, I made a couple of mistakes.
    is the one one might use when powering the bed directly from the Octopus
    (with 24V).
 3. The gap between the drivers isn’t necessary. There are 9 motor outputs with
-  motor driver #2 (0-based) having 2, but the drivers themselves are gap-less. I
-  rearranged them neatly. The gap will instead be between the motor connectors.
+   motor driver #2 (0-based) having 2, but the drivers themselves are gap-less.
+   I rearranged them neatly. The gap will instead be between the motor
+   connectors.
 4. In general, I looked at the docs for the Octopus _1.x_, and not the Octopus
-  _Pro_. Oops. Not too bad at the moment, but would have me scratch my head
-  later when looking for specific pinouts.
-5. I did not ground the DIN rails or the metallic frame. I’m literally betting my
-  lifeee that none of the wiring is messed up (to an enormous degree, but
-  still).
+   _Pro_. Oops. Not too bad at the moment, but would have me scratch my head
+   later when looking for specific pinouts.
+5. I did not ground the DIN rails or the metallic frame. I’m literally betting
+   my life that none of the live wires touches the frame.
 6. The V- outputs of the PSUs weren’t connected. They are now. Since I didn’t
-  have thick enough black/red cables, I tore apart a power socket cable, and
-  used brown/blue instead. I’m sure this violates some DIN, ISO or geneva
-  convention rule, but what can I say, I’m just a theoretical physicist, and I
-  promise to fix this later™.
-
-The whole thing took me an hour. Electronics total 6h45, total 21h.
+   have thick enough black/red cables, I tore apart a power socket cable, and
+   used brown/blue instead. I’m sure this violates some DIN, ISO or geneva
+   convention rule, but what can I say, I’m just a theoretical physicist, and I
+   promise to fix this later™.
+7. The Sexbolt had a bit too much resistance on the piston, making me afraid it
+   would get stuck in a hot chamber and maybe with time. I took it apart again
+   (scratching out the Loctite, ugh), applied a very thin layer of Traxxas 50k
+   that I wiped off again because it was maybe too stiff, applied new Loctite,
+   and reassembled. The piston now moved under its own weight, and also during
+   gentle shaking. Good enough! (Counting the 30m for this towards total, but
+   not electronics, time.)
 
 ![](pictures/2022-11-02_1_ac-dc-done.jpg)
 
@@ -460,8 +474,8 @@ Mainsail! Woohooo!! (After connecting the LAN cable. I’ll set up Wifi for the
 Raspi next.)
 
 The next steps were spent fiddling with a hub that I haven’t used in ages. My
-desktop doesn’t have LAN, I forgot enabling Wifi on the Raspi, and my laptop
-doesn’t have its SSH key authorized by the Raspi.
+desktop doesn’t have Wifi, I forgot adding Wifi credentials on the Raspi, and my
+laptop doesn’t have its SSH key authorized by the Raspi.
 
 Once connection was established, the dashboard wouldn’t appear because some
 necessary-and-essential fields, such as the MCU, the kinematics, and motor pins
@@ -479,13 +493,32 @@ copying them between host and Voron manually.
 
 [klipper-flash]: https://docs.vorondesign.com/build/software/octopus_klipper.html
 
-Lo and behold, I a dashboard! I did not dare push any buttons as to not use any
-of the nonsense pins I entered, but we’re in software land now! Well, save for
-all the wiring still to be done. The golem has arisen from the dead, while it is
-still paralyzed, it is able to think and communicate.
+Lo and behold, I have a dashboard! I did not dare push any buttons as to not use
+any of the nonsense pins I entered, but we’re in software land now! Well, save
+for all the wiring still to be done. The golem has arisen from the dead, while
+it is still paralyzed, it is able to think and communicate.
 
 ![](pictures/2022-11-02_3_mainsail-dashboard-working.png)
 
-I’m counting this as verification of the electronics, which I have now spent a
-total of 2h30m on this session, for an electronics total of 7h15, and 22h30m
-total.
+Keeping track of time is becoming more and more complicated. I’m adding 1h for
+setting up Mainsail OS on the Raspi (which I had done before the parts even
+arrived).
+  - Mechanical: 14h15m + 30m (Sexbolt) = 14h45m
+  - Electronics: 5h45m + 2h30m (wiring, booting) = 8h15m
+  - Software: 1h (MainsailOS)
+  - Total: 24h
+
+
+# 2022-11-03
+
+15min to get Raspi+MCU temperatures in Mainsail
+
+30min bed installation with fugly cutouts, woops
+
+```ini
+[power main_relay]
+type: gpio
+pin: gpiochip0/gpio14
+off_when_shutdown: True
+initial_state: off
+```
