@@ -559,3 +559,12 @@ Times:
   - Electronics: 8h15m + 3h15 (cable chains) = 11h30m
   - Software: 1h + 15m (temperature graphs) = 1h15m
   - Total: 28h
+
+# 2022-11-04
+
+Wiring: 45min for an abomination, todo: refactor
+
+PICTURE: wiring bowels hanging out
+
+Started machine: does not smoke. Connect to Mainsail. I see the heater
+temperature!
