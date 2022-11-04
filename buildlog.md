@@ -562,9 +562,35 @@ Times:
 
 # 2022-11-04
 
-Wiring: 45min for an abomination, todo: refactor
+Wiring: 45min (electrical) for an abomination, todo: refactor
 
 PICTURE: wiring bowels hanging out
 
 Started machine: does not smoke. Connect to Mainsail. I see the heater
 temperature!
+
+---
+
+Session 2 today: techday, 2 hours config editing (software)
+
+---
+
+Session 3
+
+15min cleaning up the desk (time: other)
+
+23:00 Next, wiring. Install sexbolt.
+
+24:00 Bed wired (and silly plug cut and wago’d). Chamber thermistor added. Everything wired up. I dread the wire cleanup. But config first. Also wired the bed relais to a thermal output, instead of the bed output, saving two big wires.
+
+!!!!!!!!!!!!!!! timesheet entry done here
+
+0:20 Lacked a 3-pole cable. Turns out I put it into the unused  probe1 slot, but klicky is in slot0 and slot3 is unused. Repurposed for LED. Started Voron, booted successfully.
+
+Software time!
+
+Times:
+  - Mechanical: 15h15m + 15m (sexbolt, cleanup) = 15h30m
+  - Electronics: 11h30m + 1h45m (bed, thermistors, sexbolt) = 13h15m
+  - Software: 1h15m + 2h (config, blind)
+  - Total:
