@@ -511,14 +511,51 @@ arrived).
 
 # 2022-11-03
 
-15min to get Raspi+MCU temperatures in Mainsail
+Setting up temperature graphs in Mainsail for the Raspi and MCU temperatures was
+simple, and took maybe 15min (software). Now I have some graphs!
 
-30min bed installation with fugly cutouts, woops
+Since I skipped bed installation (_way_) earlier, now is the time. The glue has
+cured, and I can cut off the excess. I also cut gaps so I can screw the bed to
+the rails. The first two are abominations, the second two are alright. I’ll keep
+the PEI sheet on as much as I can so nobody notices. 30min mechanical.
 
-```ini
-[power main_relay]
-type: gpio
-pin: gpiochip0/gpio14
-off_when_shutdown: True
-initial_state: off
-```
+![](pictures/2022-11-03_1_cutting-off-magnetic-sheet.jpg)
+
+![](pictures/2022-11-03_2_bed-installed.jpg)
+
+Took a break (bouldering), then started a new session at 22:00. Cable chains time!
+
+22:20 toolhead PCB mounted. Needed special part to hold it, but my friend got it
+for me ahead of time, cool. (Why does Magicphoenix ship their own non-standard
+PCB? Who knows.) Toolhead PCB: 20min. Has internal thermistor (for chamber
+temperature measurement, which is a _terrible_ idea to measure so close to the
+hotend), but that shares its slot with, well, the only thermistor slot, so that
+one goes to the hotend one of course. Fans jumpered to 24V.
+
+![](pictures/2022-11-03_3_printhead-pcb.jpg)
+
+22:40 toolhead cable chain mounted, but it’s the thick one, meant for the
+electronics-to-gantry part. Argh. Cannot use it because its minimum radius is
+too big (and also because it’s needed for the Z axis).
+
+23:00 X cable chain correct. It had just the right length: one element less and
+X would be limited, one more and it would hit the window.
+
+23:40. Y cable chain assembled. Left 3 elements out. Realized I forgot the
+heater input for the toolhead. Fuck. Fiddle that through the X and Y chains.
+
+1:15. Everything made its way down to the electronics compartment. Cable routing
+is surprisingly unfun. I used very few zipties, slacking up the cables is
+something I’ll do once wiring is finished at the bottom; the cables are long
+enough anyway. Breakout PCB shoehorned onto one of the DIN rails, using a
+leftover plastic part as spacer so the soldering tips don’t penetrate the
+plastic it lies on. Added Z motor wires, and calling it a day. It’s a terrible,
+terrible mess for later clean up.
+
+![](pictures/2022-11-03_4_messy-wip-wiring.jpg)
+
+Times:
+  - Mechanical: 14h45m + 30m (bed) = 15h15m
+  - Electronics: 8h15m + 3h15 (cable chains) = 11h30m
+  - Software: 1h + 15m (temperature graphs) = 1h15m
+  - Total: 28h
