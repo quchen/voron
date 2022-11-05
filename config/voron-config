@@ -11,7 +11,8 @@ voron_address = "voron.local"
 local_prefix = os.path.realpath(os.path.dirname(__file__))
 voron_home = f"/home/{voron_user}"
 files = [
-    { "local": f"{local_prefix}/files/printer.cfg", "voron": f"{voron_home}/klipper_config/printer.cfg" }
+    { "local": f"{local_prefix}/files/printer.cfg", "voron": f"{voron_home}/klipper_config/printer.cfg" },
+    { "local": f"{local_prefix}/files/printer/leds.cfg", "voron": f"{voron_home}/klipper_config/printer/leds.cfg" }
 ]
 
 def command_line_args():
@@ -29,7 +30,7 @@ def command_line_args():
 
 def scp(source, target):
     print(f"Copy [{source}] to [{target}]", file=sys.stderr)
-    subprocess.run(["scp", source, target])
+    subprocess.run(["scp", "-r", source, target])
 
 def copy_all(mode):
     for file_pair in files:
