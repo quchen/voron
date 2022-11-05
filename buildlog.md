@@ -724,14 +724,34 @@ the X/Y axes isn’t set correctly, so the Sexbolt position is not know so …
 
 ## Calibrating X/Y axes
 
-<!-- [safe_z_home]
-# ##  XY Location of the Z Endstop Switch
-# ##  Update -10,-10 to the XY coordinates of your endstop pin
-# ##  (such as 157,305) after going through Z Endstop Pin
-# ##  Location Definition step.
-home_xy_position: 180, 258
-speed: 100
-z_hop: 10 -->
+This is a simple calculation,
+
+rotation_distance = <full_steps_per_rotation = 200> * <microsteps = 32> / <steps_per_mm>
+steps_per_mm = 200 steps/rotation * 1/20 rotations/tooth * 1/2 tooth/mm
+
+
+## Z homing, for real now
+
+Homed X and Y, started Z homing to move Z close to the bed, triggering the
+Sexbolt when the nozzle was close to it. Then manually moved XY to (180, 257),
+right above the Sexbolt. Homing works! I just have to be careful the wires still
+hanging out of the toolhead don’t catch on anything. Zip ties are on the TODO
+list.
+
+## Adjusting Klicky height
+
+I put in the Klicky holder without worrying about its height or alignment. This
+requires some mechanical disassembly. Turns out it’s super easy! 5 minutes max.
+Unscrewed Stealthburner (4 screws), took out hotend, adjusted Klicky holder to
+be at the very bottom, put everything back together. I chose the very bottom
+because it was already on that height on one screw, and it looked okay before,
+just a bit slanted.
+
+I also downloaded the [Klicky macros from the Github page][github-klicky-macros].
+
+[github-klicky-macros]: https://github.com/jlas1/Klicky-Probe/tree/main/Klipper_macros
+
+PICTURE: Adjusting Klicky
 
 
 
@@ -741,5 +761,5 @@ z_hop: 10 -->
 Times:
   - Mechanical: = 15h30m + 15m (Sexbolt boogaloo)
   - Electronics: = 13h15m + 30m (Klicky) + 15m (fooling around)
-  - Software: = 6h15m
+  - Software: = 6h15m + 1h (axes calibration, Z homing)
   - Total: 35h +
