@@ -643,9 +643,12 @@ knows). Seriously, fuck the UX and manpages of _so many_ Linux tools.
 
 ![](pictures/2022-11-04_3_stealthburner-leds.jpg)
 
-!!! 2h entered into timesheet
+!!! 2h, already entered into timesheet
 
 ### Fans
+
+The fans worked right away. The part cooling fan can be controlled, the hotend
+fan was tested by setting its threshold temperature to 10°C.
 
 
 Times:
