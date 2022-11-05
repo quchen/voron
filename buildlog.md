@@ -858,11 +858,15 @@ have only ensured it triggers correctly.
 First part, mechanical assembly. Super simple, two heat set inserts, T nuts into
 extrusions, 15min, done.
 
+![](pictures/2022-11-05_4_klicky-attached.jpg)
+
 Software is next. Surely I’ll need the Klicky location for that, so let’s figure
 this out. Wait a second, the holder on the print head crashes into the
 gantry-attached holder if I do that, the toolhead holder is too low. But even if
 I fix that, doesn’t that mean part of the print bed is inaccessible, because
 during a print the Klicky would be picked up?
+
+![](pictures/2022-11-05_5_klicky-height-bad.jpg)
 
 I just worked on configuration for 2h, let’s see what I can still remember for
 the build log. So, homing XYZ works, but is now done by the Klicky scripts,
@@ -904,7 +908,7 @@ comes out of Klicky and setting the probing coordinates.
 
 Now that the gantry is level, it’s time for having a look at the bed!
 
-![](pictures/2022-11-05_4_bed_mesh.png)
+![](pictures/2022-11-05_6_bed-mesh.png)
 
 0.071mm variance. I don’t know whether that is very good, but it certainly isn’t
 terrible considering it’s well below a typical layer height.
@@ -916,11 +920,11 @@ QGL, all the things. 30min.
 
 Since I’ll be printing ABS, I decided to attach the panels earlier rather than later.
 
-PICTURE: with panels
+![](pictures/2022-11-05_7_panels-attached.jpg)
 
 And now let’s print the cube! Here are the first couple of layers:
 
-PICTURE: lol bad Z calibration
+![](pictures/2022-11-05_8_very-bad-calibration-cube.jpg)
 
 lol, the Z offset is _off_. If the nozzle has the wrong height, at least I had
 the non-damaging version of it!
