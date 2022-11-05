@@ -685,3 +685,61 @@ Times:
   - Electronics: 11h30m + 1h45m (bed, thermistors, sexbolt) = 13h15m
   - Software: 1h15m + 2h (config, blind) + 3h (config: buzz, homing, LEDs, fans, heating) = 6h15m
   - Total: 35h
+
+
+# 2022-11-05
+
+## Trello
+
+I’m losing track of things to do, so I’ve created a Trello board to keep my
+TODOs better than as a loose collection of comments here. Let’s see how that
+goes.
+
+## Sexbolt Re-reassembly
+
+The bed of the MagicPhoenix kit is a bit higher than the normal bed, so the
+Sexbolt was sitting too low for the nozzle to touch. Took it apart again
+(distance to bed: 2.6mm), removed the Loctite residue with acetone (doesn’t work
+that well, but worth a try) and reassembled it, but adding just a bit shy of
+2.6mm to the screw by not fastening it to the end.
+
+## Fixing the Klicky
+
+The Klicky probe would not trigger during the previous end stop switch test. I
+quickly debugged this by ~~being a genius~~ remembering my friend mentioning a
+similar problem. And indeed, comparing the pinouts of the Octopus and breakout
+PCB, it turns out the cable was flipped: GND went to signal and the other way
+round! Seems like it’s a bug in the MacigPhoenix kit, and not a one-time fluke.
+Using some very sharp pliers I undid the PCB plug and flipped polarity.
+
+Tested it, and: it works! When attached, it triggers when pressed and does not
+trigger when not. When not attached, it is set to triggered, so that failing to
+pick it up for some reason does not start probing the bed without it.
+
+## Configuring Z homing
+
+Z homing has to be done by pushing the nozzle onto the Sexbolt, so the location
+has to be precisely configured. But wait, I can’t do that because the travel on
+the X/Y axes isn’t set correctly, so the Sexbolt position is not know so …
+
+## Calibrating X/Y axes
+
+<!-- [safe_z_home]
+# ##  XY Location of the Z Endstop Switch
+# ##  Update -10,-10 to the XY coordinates of your endstop pin
+# ##  (such as 157,305) after going through Z Endstop Pin
+# ##  Location Definition step.
+home_xy_position: 180, 258
+speed: 100
+z_hop: 10 -->
+
+
+
+
+
+
+Times:
+  - Mechanical: = 15h30m + 15m (Sexbolt boogaloo)
+  - Electronics: = 13h15m + 30m (Klicky) + 15m (fooling around)
+  - Software: = 6h15m
+  - Total: 35h +
