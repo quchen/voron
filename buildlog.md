@@ -650,9 +650,20 @@ knows). Seriously, fuck the UX and manpages of _so many_ Linux tools.
 The fans worked right away. The part cooling fan can be controlled, the hotend
 fan was tested by setting its threshold temperature to 10°C.
 
+### Heating
+
+Bed and hotend were within a degree from each other, which I estimated is the
+resolution of the thermal probes. Hotend fan worked. Time to heat it up, no? It
+worked, but overshot the (conservative) target of 60°C by about 3°C. It’s
+reassuring that the hotend cooling fan turned on immediately, and stayed on
+until the temperature dropped below 50°C. Overshooting by 3°C isn’t that great
+though at a test temperature of 60°C. I also heated to 100°C, 200°C and 260°C
+(ABS printing temperature), it worked as expected. Once cooled down a bit I
+think it’s time for PID calibration via
+`PID_CALIBRATE HEATER=extruder TARGET=60`.
 
 Times:
   - Mechanical: 15h15m + 15m (sexbolt, cleanup) = 15h30m
   - Electronics: 11h30m + 1h45m (bed, thermistors, sexbolt) = 13h15m
-  - Software: 1h15m + 2h (config, blind) + 2h (config: buzz, homing, LEDs)
+  - Software: 1h15m + 2h (config, blind) + 3h (config: buzz, homing, LEDs, fans, heating)
   - Total:
