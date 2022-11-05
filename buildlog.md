@@ -929,12 +929,36 @@ And now let’s print the cube! Here are the first couple of layers:
 lol, the Z offset is _off_. If the nozzle has the wrong height, at least I had
 the non-damaging version of it!
 
+After a few hours I found out multiple things.
+- SuperSlicer allows setting a chamber temperature, Prusa does not. SuperSlicer
+  it is from now on.
+- The slicers generate Z moves with a feedrate of 18000, oh wow. No surprise
+  movements are bonkers when the print starts. I set a maximum feedrate of
+  40mm/s for the Z axis in the Klipper config, a 450-fold decrease.
 
+And reprint. It’s a cube! Finally!
 
+![](pictures/2022-11-05_9_calibration-cube-half-done.jpg)
 
+![](pictures/2022-11-05_10_calibration-cube-done.jpg)
 
-Times:
+I can’t quite get a bearing in without hammering on it, but the exterior measurements are spot on.
+
+![](pictures/2022-11-05_11_accurate-cube.jpg)
+
+The first layer was _terrible_ though, the Z offset was wrong, and I manually
+had to add a bit to it. I used the textured sheet because I don’t like it much
+and it’s a good spoil surface. I’m now printing a 3-layer high box just so I can
+hopefully peel it off the print sheet and get the otherwise irremovable residue
+of the cube’s skirt off.
+
+![](pictures/2022-11-05_12_bad-first-layer.jpg)
+
+Times are hard, I lost track of time, but I think including breaks I spent
+around 12h (wat) on the printer today, all of it on configuration.
+
   - Mechanical: 16h + 15m (Klicky)
   - Electronics: 14h
-  - Software: 9h45m + 2h (Klicky) + 15m (QGL) + 15m (bed mesh) + 30m (macros)
-  - Total: 39h45
+  - Software: 9h45m + 2h (Klicky) + 15m (QGL) + 15m (bed mesh) + 30m (macros) +
+    (oh boy I lost track of time but total has to be 12h today) 4h
+  - Total: 39h45 + 3h15m 4h = 47h
