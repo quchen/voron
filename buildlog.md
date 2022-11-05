@@ -909,10 +909,28 @@ Now that the gantry is level, it’s time for having a look at the bed!
 0.071mm variance. I don’t know whether that is very good, but it certainly isn’t
 terrible considering it’s well below a typical layer height.
 
+## Test print? Test print!
+
+Some more configuration, write macro for starting/stopping prints that home,
+QGL, all the things. 30min.
+
+Since I’ll be printing ABS, I decided to attach the panels earlier rather than later.
+
+PICTURE: with panels
+
+And now let’s print the cube! Here are the first couple of layers:
+
+PICTURE: lol bad Z calibration
+
+lol, the Z offset is _off_. If the nozzle has the wrong height, at least I had
+the non-damaging version of it!
+
+
+
+
+
 Times:
   - Mechanical: 16h + 15m (Klicky)
   - Electronics: 14h
-  - Software: 9h45m + 2h (Klicky) + 15m (QGL) + 15m (bed mesh)
+  - Software: 9h45m + 2h (Klicky) + 15m (QGL) + 15m (bed mesh) + 30m (macros)
   - Total: 39h45
-
-## Test print? Test print!
