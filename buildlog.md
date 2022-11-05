@@ -894,14 +894,25 @@ Sexbolt, I manually figured out by nudging the print head there.
 
 [klicky-github]: https://github.com/jlas1/Klicky-Probe
 
-Times:
-  - Mechanical: 16h + 15m (Klicky)
-  - Electronics: 14h
-  - Software: 9h45m + 2h (Klicky)
-  - Total: 39h45
-
 ## Quad Gantry Leveling
 
 QGL probes the bed on its four corners, and adjusts the Z motors so the gantry
 is parallel to the print bed. Configuration is simple enough, it pretty much
 comes out of Klicky and setting the probing coordinates.
+
+## Measure bed mesh
+
+Now that the gantry is level, it’s time for having a look at the bed!
+
+![](pictures/2022-11-05_4_bed_mesh.png)
+
+0.071mm variance. I don’t know whether that is very good, but it certainly isn’t
+terrible considering it’s well below a typical layer height.
+
+Times:
+  - Mechanical: 16h + 15m (Klicky)
+  - Electronics: 14h
+  - Software: 9h45m + 2h (Klicky) + 15m (QGL) + 15m (bed mesh)
+  - Total: 39h45
+
+## Test print? Test print!
