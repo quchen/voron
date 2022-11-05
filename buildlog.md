@@ -581,13 +581,53 @@ Session 3
 
 23:00 Next, wiring. Install sexbolt.
 
-24:00 Bed wired (and silly plug cut and wago’d). Chamber thermistor added. Everything wired up. I dread the wire cleanup. But config first. Also wired the bed relais to a thermal output, instead of the bed output, saving two big wires.
+24:00 Bed wired (and silly plug cut and wago’d). Chamber thermistor added.
+Everything wired up. I dread the wire cleanup. But config first. Also wired the
+bed relais to a thermal output, instead of the bed output, saving two big wires.
 
 !!!!!!!!!!!!!!! timesheet entry done here
 
-0:20 Lacked a 3-pole cable. Turns out I put it into the unused  probe1 slot, but klicky is in slot0 and slot3 is unused. Repurposed for LED. Started Voron, booted successfully.
+0:20 Lacked a 3-pole cable. Turns out I put it into the unused probe1 slot, but
+klicky is in slot0 and slot3 is unused. Repurposed for LED. Started Voron,
+booted successfully.
 
-Software time!
+## Tuning begins!
+
+### Stepper buzzing
+
+Buzz all the steppers!
+
+```bash
+STEPPER_BUZZ STEPPER=stepper_x  # moves towards front/right
+STEPPER_BUZZ STEPPER=stepper_y  # moves towards back/right
+STEPPER_BUZZ STEPPER=stepper_z
+STEPPER_BUZZ STEPPER=stepper_z1 # needed inversion
+STEPPER_BUZZ STEPPER=stepper_z2
+STEPPER_BUZZ STEPPER=stepper_z3
+STEPPER_BUZZ STEPPER=extruder   # E>0 moves up; not sure what direction is right
+```
+
+All motors move, but both steppers going towards the right when buzzing sounds
+wrong. There’s [a helpful entry in the MagicPhoenix wiki][mpx-corexy-debug] to
+help with that though. I can’t move the gantry without homing it first though.
+Is there an override?
+
+[mpx-corexy-debug]: https://mpx.wiki/corexy_incorrect_xy_direction
+
+### Homing switches
+
+Klipper has a handy endstop test section in the machine config (why _there_?).
+Manually triggered them and looked for a change in state. XYZ work, but Klicky
+probe does not register.
+
+Without homing, I can’t move; without moving, I can’t figure out what physical
+direction the logical direction X corresponds to. But I _can_ set the homing
+speed super slow and home! X goes in the right direction (right side), while Y
+is inverted (towards front instead of back). The
+[MagicPhoenix wiki][mpx-corexy-debug] says to flip motors in that case, which
+was indeed the solution.
+
+![](pictures/2022-11-05_1_endstop-test.png)
 
 Times:
   - Mechanical: 15h15m + 15m (sexbolt, cleanup) = 15h30m
