@@ -506,7 +506,7 @@ arrived).
   - Mechanical: 14h15m + 30m (Sexbolt) = 14h45m
   - Electronics: 5h45m + 2h30m (wiring, booting) = 8h15m
   - Software: 1h (MainsailOS)
-  - Total: 24h
+  - Total: 20h + 4h = 24h
 
 
 # 2022-11-03
@@ -558,7 +558,7 @@ Times:
   - Mechanical: 14h45m + 30m (bed) = 15h15m
   - Electronics: 8h15m + 3h15 (cable chains) = 11h30m
   - Software: 1h + 15m (temperature graphs) = 1h15m
-  - Total: 28h
+  - Total: 24h + 4h = 28h
 
 # 2022-11-04
 
@@ -684,7 +684,7 @@ Times:
   - Mechanical: 15h15m + 15m (sexbolt, cleanup) = 15h30m
   - Electronics: 11h30m + 1h45m (bed, thermistors, sexbolt) = 13h15m
   - Software: 1h15m + 2h (config, blind) + 3h (config: buzz, homing, LEDs, fans, heating) = 6h15m
-  - Total: 35h
+  - Total: 28h + 7h = 35h
 
 
 # 2022-11-05
@@ -751,15 +751,101 @@ I also downloaded the [Klicky macros from the Github page][github-klicky-macros]
 
 [github-klicky-macros]: https://github.com/jlas1/Klicky-Probe/tree/main/Klipper_macros
 
-PICTURE: Adjusting Klicky
+![](pictures/2022-11-05_1_adjusting-klicky.jpg)
 
+## LEDs misbehave
 
+I noticed the LEDs sometimes show the wrong color, e.g. (R,G,B) = (1,0,0) yields
+a teal LED. I don’t care about it enough to debug it right now, but it’s
+something to fix later.
 
+## Calibrate extruder, part 1
 
+When ordered to extrude 10cm of filament, the extruder should do just that.
+Apparently that’s often not the case, so I’ll start melting some first plastic!
+Window is open because I have an un-enclosed un-nevermored cancer fume machine.
+I’ve also tightened the nozzle, carefully, with a size 7 nut (and only a nut).
 
+Now: unpack some ABS, and heat the hotend to 250 °C. Before doing this, I
+noticed that it won’t let me extrude anymore because nozzle temperature is below
+200°C, which I had previously configured. Nice! I then inserted some filament
+(Esun black) with the clockwork open, pushed it all the way through, and got my
+first extrusion.
+
+![](pictures/2022-11-05_2_first-extrusion.jpg)
+
+Next step, calibration. I cut off the filament at 40mm above the Clockwork, and
+told it to extrude 30mm. It extruded maybe one in this extrusion test #1. Come
+to think of it, I should have done some config sanity checks before! Anyway,
+22mm are still sticking out, so I extruded 40mm-22m=18mm, off by a factor of
+30mm/18mm. I could now modify the config value by this factor but – wait, I have
+this config value twice (33.500 and 22.6789511 a bit further down)! What’s the
+setting Klipper actually uses in this case? Argh.
+
+I’m keeping the value of 22.6789511, which the documentation says it’s a »good
+starting point«. A very specific one, but okay. Alright, ew filament. Wait, how
+do I change filament? Umm retract a bit, open Clockwork, and pull I guess. Works
+well enough, although I’m a bit worried this might get some molten plastic onto
+the extruder gears.
+
+Extrusion test #2. This time, I put a little indicator (electrical tape) onto
+the filament at 100mm. Ordered once again 30mm for extrusion, 18mm were
+_actually_ extruded. I guess now I know that later values override previous one
+in Klipper (at least in this case). The good news is that I can just apply the
+factor 30/18 from above to the `rotation_distance`, which is then $22.6789511
+\otimes \frac{18}{30}$. Wait, what’s $\otimes$? It’s the
+I-don’t-know-whether-to-multiply-or-divide operator. Does 37.8 or 13.6 sound
+like a more plausible result value? Underextrusion (18mm instead of 30mm) means
+the rotation distance is too high, so the gears move less to extrude some
+amount. 13.6(…) it is!
+
+New attempt, extrude 30mm; marker went from 83mm to 53mm. Pretty good!
+
+![](pictures/2022-11-05_3_calibrate-extruder-rotation-distance.jpg)
+
+For some finer calibration, I’ll use up the rest of the test filament I’ve
+inserted. While at it, I might as well use my caliper for some better
+measurements. Moved filament marker way up. 177.33mm it says. Alright, extrude
+150mm! Wait, skipped steps? Fuck fuck fuck. The heater has turned off in the
+meantime, I extruded at slightly above 200°C so the safety didn’t kick in, but
+extruding cooled the nozzle to 170°C. At least nothing broke! Alright, fiddling
+with filament pieces is annoying, I’m getting the spool holder ready. For some
+reason that one is part of Pif, even though it’s not super necessary to get
+anything done (unlike e.g. the side panel fasteners, which are pretty much
+_required_ for ABS printing).
+
+## Spool holder
+
+Simple enough, followed the instructions. I didn’t glue the PTFE tube into the
+holder because it is bent in one direction from being spooled up, and that could
+be used to have a tight mechanical fit.
+
+## Calibrate extruder, part 2
+
+I cut ~10mm of PTFE tube open so I could clip it around the filament, which now
+has its other end hidden deep into a big spool. This is my new extrusion marker.
+Good idea, but unfortunately both hard to get onto the filament, and then it
+doesn’t hold onto it very well, because completely unknown to me, PTFE is quite
+slippery. Back to electrical tape it is.
+
+Extrusion test #3. 192.81mm until marker, extrude 150mm at 5mm/s
+(note: 10mm/s skips steps!). Marker is now at 45.52mm, so actual feed was
+(192.81 - 45.52)mm = 147.29mm, underextrusion, `rotation_distance` is too high
+by a factor of 150mm/147.29mm. Old `rotation_distance`) * 147.29/150 is the new
+value, 13.36(…).
+
+Extrusion test #4. 203.31mm until marker, extrude 150mm at 5mm/s. 52.91mm until
+marker, 150.39mm extruded. We’re in sub-mm territory, good enough, but since we
+already have the value, I might as well add another round of calculation. This
+time it was an overextrusion, so the `rotation_distance` needs to increase by a
+whopping 150.39/150. (We’re well below my measurement accuracy, and of course
+the filament isn’t straight, but this is fun so I’m still doing it.)
+
+Final value: `rotation_distance = 13.396270810234196`. Extruder calibration
+done! Only took about 2h30m.
 
 Times:
-  - Mechanical: = 15h30m + 15m (Sexbolt boogaloo)
+  - Mechanical: = 15h30m + 15m (Sexbolt boogaloo) + 15m (spool holder)
   - Electronics: = 13h15m + 30m (Klicky) + 15m (fooling around)
-  - Software: = 6h15m + 1h (axes calibration, Z homing)
+  - Software: = 6h15m + 1h (axes calibration, Z homing) + 2h30m (extruder config)
   - Total: 35h +
