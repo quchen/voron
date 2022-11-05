@@ -683,5 +683,5 @@ which makes sense after the bed heating test.
 Times:
   - Mechanical: 15h15m + 15m (sexbolt, cleanup) = 15h30m
   - Electronics: 11h30m + 1h45m (bed, thermistors, sexbolt) = 13h15m
-  - Software: 1h15m + 2h (config, blind) + 3h (config: buzz, homing, LEDs, fans, heating)
-  - Total:
+  - Software: 1h15m + 2h (config, blind) + 3h (config: buzz, homing, LEDs, fans, heating) = 6h15m
+  - Total: 35h
