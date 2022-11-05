@@ -18,12 +18,12 @@ files = [
 def command_line_args():
     parser = argparse.ArgumentParser(
         prog = os.path.basename(__file__),
-        description = 'Download and upload Voron config for centralized tracking in Git.')
+        description = "Download and upload Voron config for centralized tracking in Git.")
 
     parser.add_argument(
-        'action',
-        choices=["upload", "download"],
-        help="Download from or upload to the Voron?"
+        "action",
+        choices=["upload", "download", "deploy"],
+        help="Dpload/download only exchange files. Deploying is an upload with a firmware restart."
         )
 
     return parser.parse_args()
@@ -31,6 +31,15 @@ def command_line_args():
 def scp(source, target):
     print(f"Copy [{source}] to [{target}]", file=sys.stderr)
     subprocess.run(["scp", "-r", source, target])
+
+def ssh_voron_command(raw_command):
+    """
+    Run a raw shell command on the Voron. No escaping is happening, so be careful.
+    """
+    subprocess.run(["ssh", f"{voron_user}@{voron_address}", raw_command])
+
+def restart_firmware():
+    ssh_voron_command("echo FIRMWARE_RESTART > /tmp/printer")
 
 def copy_all(mode):
     for file_pair in files:
@@ -41,6 +50,9 @@ def copy_all(mode):
                     scp(source=voron_scp, target=local)
                 elif mode == "upload":
                     scp(source=local, target=voron_scp)
+                elif mode == "deploy":
+                    scp(source=local, target=voron_scp)
+                    restart_firmware()
                 else:
                     raise ValueError(f"mode can only be upload/downoad, but is {mode}")
             case _:
