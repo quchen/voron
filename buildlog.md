@@ -562,46 +562,49 @@ Times:
 
 # 2022-11-04
 
-Wiring: 45min (electrical) for an abomination, todo: refactor
+## Session one: wiring
 
-PICTURE: wiring bowels hanging out
+Spent 45m more wiring. Broken window theory proves correct again, I’m making
+more of a mess because there is a mess already.
+
+![](pictures/2022-11-04_1_electric-bowels.jpg)
 
 Started machine: does not smoke. Connect to Mainsail. I see the heater
 temperature!
 
----
+## Session two: configuration out of home
 
-Session 2 today: techday, 2 hours config editing (software)
+Time for some configuration. Spent two hours giving the pins aliases. I did not
+have the Voron available, so I configured the motors blindly with _lots_ of TODO
+entries. Around 2h spent on software here.
 
----
+## Session three: back home
 
-Session 3
+### Wiring
 
-15min cleaning up the desk (time: other)
+My workplace is a terrible mess, the Voron’s wiring pales in comparison. I’m
+starting to dislike having to literally jump over and losing other things. 15m
+spent on cleanup, which was surprisingly quick to get back to a reasonable
+level.
 
-23:00 Next, wiring. Install sexbolt.
+The next hour went into installing the Sexbolt (super quick) and the bed wiring
+(not super quick since MagicPhoenix made the connector too big to pass through,
+so I cut, crimped and wago’d it). I dread the wire cleanup. But config and
+testing first! I also removed the circuits to bed in/out ports of the Octopus,
+since the bed pulls its power from mains via the big relais, and that one can be
+triggered using a normal heater output.
 
-24:00 Bed wired (and silly plug cut and wago’d). Chamber thermistor added.
-Everything wired up. I dread the wire cleanup. But config first. Also wired the
-bed relais to a thermal output, instead of the bed output, saving two big wires.
-
-!!!!!!!!!!!!!!! timesheet entry done here
-
-0:20 Lacked a 3-pole cable. Turns out I put it into the unused probe1 slot, but
-klicky is in slot0 and slot3 is unused. Repurposed for LED. Started Voron,
-booted successfully.
-
-## Tuning begins!
+I thought about skipping LED wiring for now, but I’m glad I went for it, because I was missing a cable! Where was it? Turns out I wired probe1 (meant for inductive) instead of probe0 (Klicky). Klicky has two poles, inductive 3, so that’s where my cable was hiding! Anyway, LED wired, Klicky wired.
 
 ### Stepper buzzing
 
-Buzz all the steppers!
+Time to test the motors! Wiggle them using
 
 ```bash
 STEPPER_BUZZ STEPPER=stepper_x  # moves towards front/right
 STEPPER_BUZZ STEPPER=stepper_y  # moves towards back/right
 STEPPER_BUZZ STEPPER=stepper_z
-STEPPER_BUZZ STEPPER=stepper_z1 # needed inversion
+STEPPER_BUZZ STEPPER=stepper_z1 # needs inversion
 STEPPER_BUZZ STEPPER=stepper_z2
 STEPPER_BUZZ STEPPER=stepper_z3
 STEPPER_BUZZ STEPPER=extruder   # E>0 moves up; not sure what direction is right
@@ -610,7 +613,7 @@ STEPPER_BUZZ STEPPER=extruder   # E>0 moves up; not sure what direction is right
 All motors move, but both steppers going towards the right when buzzing sounds
 wrong. There’s [a helpful entry in the MagicPhoenix wiki][mpx-corexy-debug] to
 help with that though. I can’t move the gantry without homing it first though.
-Is there an override?
+Is there an override? Let’s worry about homing first.
 
 [mpx-corexy-debug]: https://mpx.wiki/corexy_incorrect_xy_direction
 
@@ -627,10 +630,26 @@ is inverted (towards front instead of back). The
 [MagicPhoenix wiki][mpx-corexy-debug] says to flip motors in that case, which
 was indeed the solution.
 
-![](pictures/2022-11-05_1_endstop-test.png)
+![](pictures/2022-11-04_2_endstop-test.png)
+
+### LEDs
+
+Configuring LEDs is pretty simple. Add the config section, use `SET_LED` to set
+colors. Indexing starts at 1. Moved LED config to a sub-file, which is something
+I’ll be doing with most config files in the future. Note: scp is garbage at
+copying directories. It took me longer than a minute to do so correctly, so I
+gave up (will downloading work, who knows, will it override my home dir, who
+knows). Seriously, fuck the UX and manpages of _so many_ Linux tools.
+
+![](pictures/2022-11-04_3_stealthburner-leds.jpg)
+
+!!! 2h entered into timesheet
+
+### Fans
+
 
 Times:
   - Mechanical: 15h15m + 15m (sexbolt, cleanup) = 15h30m
   - Electronics: 11h30m + 1h45m (bed, thermistors, sexbolt) = 13h15m
-  - Software: 1h15m + 2h (config, blind)
+  - Software: 1h15m + 2h (config, blind) + 2h (config: buzz, homing, LEDs)
   - Total:
