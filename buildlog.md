@@ -650,7 +650,7 @@ knows). Seriously, fuck the UX and manpages of _so many_ Linux tools.
 The fans worked right away. The part cooling fan can be controlled, the hotend
 fan was tested by setting its threshold temperature to 10°C.
 
-### Heating
+### Hotend heating
 
 Bed and hotend were within a degree from each other, which I estimated is the
 resolution of the thermal probes. Hotend fan worked. Time to heat it up, no? It
@@ -661,6 +661,24 @@ though at a test temperature of 60°C. I also heated to 100°C, 200°C and 260°
 (ABS printing temperature), it worked as expected. Once cooled down a bit I
 think it’s time for PID calibration via
 `PID_CALIBRATE HEATER=extruder TARGET=60`.
+
+### Bed heating
+
+Same procedure. 60°C first, works, with a single cracking noise; something
+wasn’t set yet. I’m not too worried, because I did leave the screws of the bed
+pretty loose, as per the instructions. Next, get some PID calibration for the
+bed via `PID_CALIBRATE HEATER=heater_bed TARGET=60`.
+
+While waiting for the results, I figured I might as well try out the extruder,
+and indeed, as suspected in the buzzing test, it goes the wrong way. A simple
+reversal of the direction pin should fix this.
+
+![](pictures/2022-11-04_4_heating-pid-tuning.png)
+
+### Chamber temperature sensor
+
+Added sensor to config, reading looks okay, slightly above room temperature,
+which makes sense after the bed heating test.
 
 Times:
   - Mechanical: 15h15m + 15m (sexbolt, cleanup) = 15h30m
