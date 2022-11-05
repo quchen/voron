@@ -844,8 +844,58 @@ the filament isn’t straight, but this is fun so I’m still doing it.)
 Final value: `rotation_distance = 13.396270810234196`. Extruder calibration
 done! Only took about 2h30m.
 
+Times (it’s been a while, time for an inter-session summary):
+  - Mechanical: 15h30m + 15m (Sexbolt boogaloo) + 15m (spool holder) = 16h
+  - Electronics: 13h15m + 30m (Klicky) + 15m (fooling around) = 14h
+  - Software: 6h15m + 1h (axes calibration, Z homing) + 2h30m (extruder config) = 9h45m
+  - Total: 35h + 4h45m = 39h45
+
+## Klicky probe: attaching, homing, docking
+
+The next blocker on the way to the first print is the Klicky probe, for which I
+have only ensured it triggers correctly.
+
+First part, mechanical assembly. Super simple, two heat set inserts, T nuts into
+extrusions, 15min, done.
+
+Software is next. Surely I’ll need the Klicky location for that, so let’s figure
+this out. Wait a second, the holder on the print head crashes into the
+gantry-attached holder if I do that, the toolhead holder is too low. But even if
+I fix that, doesn’t that mean part of the print bed is inaccessible, because
+during a print the Klicky would be picked up?
+
+I just worked on configuration for 2h, let’s see what I can still remember for
+the build log. So, homing XYZ works, but is now done by the Klicky scripts,
+which override the normal homing procedure to take into account that the probe
+might still be attached. Other than that, they’re not that different.
+
+The general idea is that the Klicky is outside of the printable area, around 1cm
+besides the bed, so that it does not constrain the printable area. The location
+of the probe is configured in the XY plane, and since it is attached to the
+gantry, co-moving with and thus independent of Z. G28 (home all) drops the probe
+if necessary, then does a usual homing cycle of X, Y, then Z. The `attach_probe`
+picks up the probe coming from the front, and `dock_probe` moves it back into
+its dock and gets rid of it by moving to the positive Y direction. This is my
+test program:
+
+```
+G28
+attach_probe
+G01 X125 Y125 # Probing stuff goes here
+dock_probe
+```
+
+Configuration wise, I’ve simply copied the `Klipper_macros/*.cfg` files of the
+[Klicky repository][klicky-github] onto the printer. `klicky-variables.cfg` is
+the configuration, the rest of the files don’t have to be touched for this step.
+I heavily reduced all speeds for the probe for testing; however, the only
+crucial setting is the `docklocation`, which much like the location of the
+Sexbolt, I manually figured out by nudging the print head there.
+
+[klicky-github]: https://github.com/jlas1/Klicky-Probe
+
 Times:
-  - Mechanical: = 15h30m + 15m (Sexbolt boogaloo) + 15m (spool holder)
-  - Electronics: = 13h15m + 30m (Klicky) + 15m (fooling around)
-  - Software: = 6h15m + 1h (axes calibration, Z homing) + 2h30m (extruder config)
-  - Total: 35h +
+  - Mechanical: 16h + 15m (Klicky)
+  - Electronics: 14h
+  - Software: 9h45m + 2h (Klicky)
+  - Total: 39h45

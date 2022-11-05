@@ -12,7 +12,18 @@ local_prefix = os.path.realpath(os.path.dirname(__file__))
 voron_home = f"/home/{voron_user}"
 files = [
     { "local": f"{local_prefix}/files/printer.cfg", "voron": f"{voron_home}/klipper_config/printer.cfg" },
-    { "local": f"{local_prefix}/files/printer/leds.cfg", "voron": f"{voron_home}/klipper_config/printer/leds.cfg" }
+    { "local": f"{local_prefix}/files/printer/leds.cfg", "voron": f"{voron_home}/klipper_config/printer/leds.cfg" },
+
+    { "local": f"{local_prefix}/files/printer/klicky/klicky-bed-mesh-calibrate.cfg",    "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-bed-mesh-calibrate.cfg" },
+    { "local": f"{local_prefix}/files/printer/klicky/klicky-macros.cfg",                "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-macros.cfg" },
+    { "local": f"{local_prefix}/files/printer/klicky/klicky-probe.cfg",                 "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-probe.cfg" },
+    { "local": f"{local_prefix}/files/printer/klicky/klicky-quad-gantry-level.cfg",     "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-quad-gantry-level.cfg" },
+    { "local": f"{local_prefix}/files/printer/klicky/klicky-screws-tilt-calculate.cfg", "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-screws-tilt-calculate.cfg" },
+    { "local": f"{local_prefix}/files/printer/klicky/klicky-specific.cfg",              "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-specific.cfg" },
+    { "local": f"{local_prefix}/files/printer/klicky/klicky-variables.cfg",             "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-variables.cfg" },
+    { "local": f"{local_prefix}/files/printer/klicky/klicky-z-tilt-adjust.cfg",         "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-z-tilt-adjust.cfg" },
+
+    { "local": f"{local_prefix}/files/klipper_plugins/z_calibration/z_calibration.py",         "voron": f"{voron_home}/klipper/klippy/extras/z_calibration.py" },
 ]
 
 def command_line_args():
@@ -39,6 +50,7 @@ def ssh_voron_command(raw_command):
     subprocess.run(["ssh", f"{voron_user}@{voron_address}", raw_command])
 
 def restart_firmware():
+    ssh_voron_command("echo STEALTHBURNER_WHITE > /tmp/printer")
     ssh_voron_command("echo FIRMWARE_RESTART > /tmp/printer")
 
 def copy_all(mode):
@@ -52,11 +64,12 @@ def copy_all(mode):
                     scp(source=local, target=voron_scp)
                 elif mode == "deploy":
                     scp(source=local, target=voron_scp)
-                    restart_firmware()
                 else:
                     raise ValueError(f"mode can only be upload/downoad, but is {mode}")
             case _:
                 raise ValueError(f"Bad file pair structure: {file_pair.keys()}. Check the config block of this script at {os.path.realpath(__file__)}!")
+    if mode == "deploy":
+        restart_firmware()
 
 def main():
     args = command_line_args()
