@@ -899,3 +899,9 @@ Times:
   - Electronics: 14h
   - Software: 9h45m + 2h (Klicky)
   - Total: 39h45
+
+## Quad Gantry Leveling
+
+QGL probes the bed on its four corners, and adjusts the Z motors so the gantry
+is parallel to the print bed. Configuration is simple enough, it pretty much
+comes out of Klicky and setting the probing coordinates.
