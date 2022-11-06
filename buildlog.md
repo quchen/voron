@@ -960,8 +960,8 @@ around 12h (wat) on the printer today, all of it on configuration.
   - Mechanical: 16h + 15m (Klicky)
   - Electronics: 14h
   - Software: 9h45m + 2h (Klicky) + 15m (QGL) + 15m (bed mesh) + 30m (macros) +
-    (oh boy I lost track of time but total has to be 12h today) 4h
-  - Total: 39h45 + 3h15m 4h = 47h
+    (oh boy I lost track of time but total has to be 12h today) 4h = 18h45m
+  - Total: 39h45 + 7h15m = 47h
 
 
 # 2022-11-06
@@ -975,4 +975,28 @@ accounts: chamber temperatures over 40°C were super hard to attain
 (41-dot-something degrees after the 1h calibration cube prine!), and also it
 actually was fun to attach them accurately! I should have done this much earlier.
 
-I also did the whole Loctite
+I also did the whole Loctite trick for the couple of panel holders my friend got
+me for cheap removable panels: secure them with M3 hammer nuts with Loctite, but
+fasten them just so you barely feel resistance. Wait for the Loctite to cure and
+you’ve got yourself hex-nut somewhat-quick removable panel holders.
+
+In total, this is 1h mechanical assembly today.
+
+## Involuntary first layer art
+
+The rest of the time I spent on
+trying to print some smaller addons, but I’m having serious trouble with bed
+adhesion, and the first layer is also 0.05mm too low so that I can hear the
+nozzle scratch over the surface if I don’t calibrate it quickly enough. Bed is
+at 110°C, chamber at 44°C, still I’m getting results like this test piece
+(single .2mm layer rectangle):
+
+![](pictures/2022-11-06_1_terrible-first-layer.jpg)
+
+Before I can fix this issue, there’s no way I can print e.g. the Nevermore.
+
+Times:
+  - Mechanical: 16h + 1h (panels) = 17h
+  - Electronics: 14h
+  - Software: 18h45m
+  - Total: 47h + 1h = 48h
