@@ -962,3 +962,17 @@ around 12h (wat) on the printer today, all of it on configuration.
   - Software: 9h45m + 2h (Klicky) + 15m (QGL) + 15m (bed mesh) + 30m (macros) +
     (oh boy I lost track of time but total has to be 12h today) 4h
   - Total: 39h45 + 3h15m 4h = 47h
+
+
+# 2022-11-06
+
+## Foam pads for side panels
+
+It took me 45m to glue the foam strips onto the panels for the back, top, and
+two sides. I postponed it because I thought it wasn’t super necessary for the
+initial prints, and because it would not be fun. I think I was wrong on both
+accounts: chamber temperatures over 40°C were super hard to attain
+(41-dot-something degrees after the 1h calibration cube prine!), and also it
+actually was fun to attach them accurately! I should have done this much earlier.
+
+I also did the whole Loctite
