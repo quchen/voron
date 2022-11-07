@@ -16,6 +16,8 @@ files = [
     { "local": f"{local_prefix}/files/printer/slicer_macros.cfg", "voron": f"{voron_home}/klipper_config/printer/slicer_macros.cfg" },
     { "local": f"{local_prefix}/files/printer/button_macros.cfg", "voron": f"{voron_home}/klipper_config/printer/button_macros.cfg" },
 
+    { "local": f"{local_prefix}/files/moonraker.conf", "voron": f"{voron_home}/klipper_config/moonraker.conf" },
+
     { "local": f"{local_prefix}/files/printer/klicky/klicky-bed-mesh-calibrate.cfg",    "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-bed-mesh-calibrate.cfg" },
     { "local": f"{local_prefix}/files/printer/klicky/klicky-macros.cfg",                "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-macros.cfg" },
     { "local": f"{local_prefix}/files/printer/klicky/klicky-probe.cfg",                 "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-probe.cfg" },
@@ -25,7 +27,7 @@ files = [
     { "local": f"{local_prefix}/files/printer/klicky/klicky-variables.cfg",             "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-variables.cfg" },
     { "local": f"{local_prefix}/files/printer/klicky/klicky-z-tilt-adjust.cfg",         "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-z-tilt-adjust.cfg" },
 
-    { "local": f"{local_prefix}/files/klipper_plugins/z_calibration/z_calibration.py",         "voron": f"{voron_home}/klipper/klippy/extras/z_calibration.py" },
+    { "local": f"{local_prefix}/files/klipper_plugins/z_calibration/z_calibration.py", "voron": f"{voron_home}/klipper/klippy/extras/z_calibration.py" },
 ]
 
 def command_line_args():
