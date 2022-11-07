@@ -1000,3 +1000,25 @@ Times:
   - Electronics: 14h
   - Software: 18h45m
   - Total: 47h + 1h = 48h
+
+# 2022-11-07
+
+What got my print quality from begging for the first layer not to detach and
+then seeing it detach, to decent quality:
+
+1. Clean the print sheet with soap, rinse, then clean with IPA. I think this one
+   was the most important.
+2. Fixing the Klicky so that the first layer is okay. I now have
+   printed-part-visible scratches on the smooth PEI sheet. Oh well, it’s now my
+   spoil board.
+3. Extrusion factor 90% for ABS.
+
+I printed the blind cover for the exhaust hole with tolerable quality, the fan
+casing and lid of the Nevermore with terrible-but-workable quality, and after
+these changes the next part was pretty good.
+
+Times:
+  - Mechanical: 17h + 45m (Klicky levelling, clean PEI sheet)
+  - Electronics: 14h
+  - Software: 18h45m + 15m (extrusion factor and research) = 19h
+  - Total: 48h + 1h = 49h
