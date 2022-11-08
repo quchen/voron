@@ -431,8 +431,8 @@ In the last session, I made a couple of mistakes.
    The jumpers next to the drivers near the edge are in _use board power for
    motors_ position anyway. This wasn’t electrically wrong (phew!), but needed
    additional cables to connect the `motor power` connector, so out it goes. In
-   a future mod, since I’m using the huge relais anyway, I could get rid of both
-   the bed connectors, and route some thermal regulator pin to the relais
+   a future mod, since I’m using the huge relay anyway, I could get rid of both
+   the bed connectors, and route some thermal regulator pin to the relay
    directly, since it doesn’t need bed power for switching. The setup right now
    is the one one might use when powering the bed directly from the Octopus
    (with 24V).
@@ -591,7 +591,7 @@ The next hour went into installing the Sexbolt (super quick) and the bed wiring
 (not super quick since MagicPhoenix made the connector too big to pass through,
 so I cut, crimped and wago’d it). I dread the wire cleanup. But config and
 testing first! I also removed the circuits to bed in/out ports of the Octopus,
-since the bed pulls its power from mains via the big relais, and that one can be
+since the bed pulls its power from mains via the big relay, and that one can be
 triggered using a normal heater output.
 
 I thought about skipping LED wiring for now, but I’m glad I went for it, because I was missing a cable! Where was it? Turns out I wired probe1 (meant for inductive) instead of probe0 (Klicky). Klicky has two poles, inductive 3, so that’s where my cable was hiding! Anyway, LED wired, Klicky wired.
