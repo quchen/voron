@@ -54,6 +54,7 @@ def ssh_voron_command(raw_command):
     subprocess.run(["ssh", f"{voron_user}@{voron_address}", raw_command])
 
 def restart_firmware():
+    print("Restarting Klipper")
     ssh_voron_command("echo STEALTHBURNER_WHITE > /tmp/printer")
     ssh_voron_command("echo FIRMWARE_RESTART > /tmp/printer")
 
