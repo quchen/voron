@@ -1022,3 +1022,26 @@ Times:
   - Electronics: 14h
   - Software: 18h45m + 15m (extrusion factor and research) = 19h
   - Total: 48h + 1h = 49h
+
+# 2022-11-08
+
+Everything was fine yesterday, I showed the printer to someone, movement was
+fine. The next day, stepper A (right) would only vibrate, not move. What!
+
+- Measured cable: all wires OK.
+- Measured stepper: OK. Red/blue connect, green/black too.
+- Switched motor slot. A was on #0, same behavior on #7 though.
+- Switched drivers (TMC2209) on slots #0 (A motor) and #1 (B motor).
+  Expectation: B misbehaves instead of A. Result: both behave. Umm what? Okay,
+  cool that it’s fixed, but I have learned _nothing_.
+
+While at it I also put in the cover for the exhaust slot, replacing my not very
+sturdy cardboard-and-adhesive-tape construction.
+
+![](pictures/2022-11-08_1_back-cover.jpg)
+
+Times:
+  - Mechanical: 17h45m + 15m (back panel)
+  - Electronics: 14h + 30m (fixing motors)
+  - Software: 19h
+  - Total: 49h + 45m = 49h15m
