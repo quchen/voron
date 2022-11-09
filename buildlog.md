@@ -1120,3 +1120,24 @@ Times:
   - Electronics: 14h + 30m (fixing motors) + 1h45m (24V relay)
   - Software: 19h
   - Total: 49h + 2h30m = 51h30m
+
+# 2022-11-09
+
+## Pressure advance
+
+I followed
+[Andrew Ellis’ guide to tune pressure advance][ellis-pressure-advance], and
+chose the parameters according to my still somewhat slow configuration,
+
+  - eSun ABS+ black
+  - Slow printing speed: 300 mm/min
+  - Fast printing speed: 7200 mm/min
+  - Printing acceleration: 2000 mm/s²
+
+The code runs for a bit over 5min. The numbers are unreadable, but comparing it
+with the Mainsail preview of the GCode I counted the lines, and settled for
+0.05s.
+
+[ellis-pressure-advance]: https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/pressure_advance.md
+
+![](pictures/2022-11-09_1_pressure-advance.jpg)
