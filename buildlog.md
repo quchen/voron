@@ -1025,6 +1025,8 @@ Times:
 
 # 2022-11-08
 
+## Fixing mysterious motor outage
+
 Everything was fine yesterday, I showed the printer to someone, movement was
 fine. The next day, stepper A (right) would only vibrate, not move. What!
 
@@ -1035,13 +1037,86 @@ fine. The next day, stepper A (right) would only vibrate, not move. What!
   Expectation: B misbehaves instead of A. Result: both behave. Umm what? Okay,
   cool that it’s fixed, but I have learned _nothing_.
 
+## Cover exhaust slot
+
 While at it I also put in the cover for the exhaust slot, replacing my not very
 sturdy cardboard-and-adhesive-tape construction.
 
 ![](pictures/2022-11-08_1_back-cover.jpg)
 
+## 24V relay
+
+
+In case of an emergency exit or Klipper otherwise messing up, I want power to be
+taken away from the Octopus. This will stop heating, printing, everything. For
+this, I bought a relay, which was helpfully labelled in Chinese and had screw
+terminals so hard if you can open them you’ll be crowned king of England.
+Anyway, I wired it in, gating the AC input to the 24V PSU. Wiring is easy when
+you’re shameless, so here’s how that looks now:
+
+![](pictures/2022-11-08_2_24v-relay.jpg)
+
+An explanation is in order!
+
+### Raspi part
+
+The three wires (Vcc, GND, signal) are connected to 5V, GND and the Raspi’s
+GPIO17. I then made the Raspi an MCU by running what the
+[Klipper docs on that topic][klipper-raspi-mcu] tell me:
+
+```bash
+sudo cp ~/scripts/klipper-mcu-start.sh /etc/init.d/klipper_mcu
+sudo update-rc.d klipper_mcu defaults
+
+cd ~/klipper/
+make menuconfig
+
+sudo service klipper stop
+make flash
+sudo service klipper start
+```
+
+[klipper-raspi-mcu]: https://www.klipper3d.org/RPi_microcontroller.html
+
+### Configuration part
+
+```ini
+# moonraker.conf
+[power main_24V_power]
+type: gpio
+pin: !gpiochip0/gpio17
+off_when_shutdown: True # Shut down 24V and bed on Klipper shutdown (!)
+initial_state: off
+```
+
+### Relay part
+
+The wires from the Raspi are simply connected to their counterpart pins. The
+jumper controls whether the relay shares its own Vcc with the Raspi; since I
+don’t want to add yet another wire, I’ve let it in. Apparently this can be a
+problem should the relay do something crazy or whatever, but I don’t think
+that’s relevant for my simple circuit (because of optimism ignorance, I’m no
+electrical engineer).
+
+As mentioned, the screws on the relay were reasonable (normally open),
+unreasonable (common) and ridiculously I-am-killing-the-screw-when-turning-it
+stupidly hard to turn. I don’t know much about relays so I booted the Raspi
+without the AC connected to the relay and measured where the connection was.
+Without power, there was no connection between center and left (normally open,
+misleading name or what?!). The other side was the inverse. I even pulled the
+Vcc cable from the activated relay to check whether loss of Raspi power closes
+it. Anyway, the wiring is a bit hard to see in the picture, but the relay is
+closed by default, I have to manually enable it in the menu once it is shut
+down, and I never have to shut down my Raspi anymore. Clicking the button
+audibly toggles the relay, and soon enough the LEDs on the Stealthburner light
+up.
+
+![](pictures/2022-11-08_3_24v-software-toggle.png)
+
+I spent a total 1h45m on this.
+
 Times:
   - Mechanical: 17h45m + 15m (back panel)
-  - Electronics: 14h + 30m (fixing motors)
+  - Electronics: 14h + 30m (fixing motors) + 1h45m (24V relay)
   - Software: 19h
-  - Total: 49h + 45m = 49h15m
+  - Total: 49h + 2h30m = 51h30m
