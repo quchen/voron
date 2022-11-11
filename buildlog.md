@@ -957,10 +957,10 @@ of the cube’s skirt off.
 Times are hard, I lost track of time, but I think including breaks I spent
 around 12h (wat) on the printer today, all of it on configuration.
 
-  - Mechanical: 16h + 15m (Klicky)
+  - Mechanical: 16h + 15m (Klicky) = 16h15m
   - Electronics: 14h
   - Software: 9h45m + 2h (Klicky) + 15m (QGL) + 15m (bed mesh) + 30m (macros) +
-    (oh boy I lost track of time but total has to be 12h today) 4h = 18h45m
+    (oh boy I lost track of time but total has to be 12h today) 4h = 16h45m
   - Total: 39h45 + 7h15m = 47h
 
 
@@ -996,9 +996,9 @@ at 110°C, chamber at 44°C, still I’m getting results like this test piece
 Before I can fix this issue, there’s no way I can print e.g. the Nevermore.
 
 Times:
-  - Mechanical: 16h + 1h (panels) = 17h
+  - Mechanical: 16h15m + 1h (panels) = 17h15m
   - Electronics: 14h
-  - Software: 18h45m
+  - Software: 16h45m
   - Total: 47h + 1h = 48h
 
 # 2022-11-07
@@ -1018,9 +1018,9 @@ casing and lid of the Nevermore with terrible-but-workable quality, and after
 these changes the next part was pretty good.
 
 Times:
-  - Mechanical: 17h + 45m (Klicky levelling, clean PEI sheet)
+  - Mechanical: 17h15m + 45m (Klicky levelling, clean PEI sheet) = 18h
   - Electronics: 14h
-  - Software: 18h45m + 15m (extrusion factor and research) = 19h
+  - Software: 16h45m + 15m (extrusion factor and research) = 17h
   - Total: 48h + 1h = 49h
 
 # 2022-11-08
@@ -1116,9 +1116,9 @@ up.
 I spent a total 1h45m on this.
 
 Times:
-  - Mechanical: 17h45m + 15m (back panel)
-  - Electronics: 14h + 30m (fixing motors) + 1h45m (24V relay)
-  - Software: 19h
+  - Mechanical: 18h + 15m (back panel) = 18h15m
+  - Electronics: 14h + 30m (fixing motors) + 1h45m (24V relay) = 16h15m
+  - Software: 17h
   - Total: 49h + 2h30m = 51h30m
 
 # 2022-11-09
@@ -1141,3 +1141,42 @@ with the Mainsail preview of the GCode I counted the lines, and settled for
 [ellis-pressure-advance]: https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/pressure_advance.md
 
 ![](pictures/2022-11-09_1_pressure-advance.jpg)
+
+# 2022-11-10
+
+I did everything pretty much in one go, for a 2h30m session. Pretty much all of
+it was mechanical (plugged in two fan cables), and some parameter tuning.
+
+# Decontaminator
+
+The decontaminator is a little brush with a bucket next to it. The idea is to
+extrude some filament, wipe the nozzle on the brush, and have a clean start
+without ooze guaranteed before every print. Installation is simple enough. It
+even comes with slots for magnets so it snaps into place, if only my screws were
+magnetic. Another benefit I can’t use is that it allows tiny screws to stick out
+ontop that act as a PEI sheet stopper, but my screws are too short, so I’m not
+having any of that. The brush is where the Klicky used to be, which I relocated
+with a special side mount. The nozzle can just barely touch the brush so the
+layout is fine for now. I did not configure the firmware to use the
+decontaminator yet though, so this will have to wait until later.
+
+![](pictures/2022-11-10_1_decontaminator.jpg)
+
+# Electronics fans
+
+I installed fans for the electronics compartment. After an initial test of
+having them PID controlled and failing to keep them to low, non-oscillating
+levels, I decided to revert to the old temperature measurements, and having them
+as manually controlled fans in the firmware. PID is something I can worry about
+in the future.
+
+![](pictures/2022-11-10_2_electronics-fans.jpg)
+
+Oops, I just noticed the purge bucket collides with the Klicky when homing Z. A
+problem for another day, for now I’m simly removing the bucket.
+
+Times:
+  - Mechanical: 18h15m + 2h (screwing, unmounting, mounting, glueing) = 20h15m
+  - Electronics: 16h15m + ε (fan plugs) = 15h15m
+  - Software: 17h + 30m = 17h30m
+  - Total: 51h30m + 2h30m = 53h
