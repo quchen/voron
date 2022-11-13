@@ -1177,6 +1177,43 @@ problem for another day, for now I’m simly removing the bucket.
 
 Times:
   - Mechanical: 18h15m + 2h (screwing, unmounting, mounting, glueing) = 20h15m
-  - Electronics: 16h15m + ε (fan plugs) = 15h15m
+  - Electronics: 16h15m + ε (fan plugs) = 16h15m
   - Software: 17h + 30m = 17h30m
-  - Total: 51h30m + 2h30m = 53h
+  - Total: 51h30m + 2h30m = 54h
+
+# 2022-11-13
+
+## Nevermore (activated charcoal chamber filter)
+
+I finally put in the Nevermore, an activated charcoal filter to get rid of that
+cancerous styrene ABS produces when heated. I’ve had to reprint the charcoal
+compartment, because embarassingly enough I glued the magnets in repellant
+direction.
+
+Since I had to take the bed out to install it, I also took the opportunity to
+route the bed cables through the hole in the base plate (it was previously going
+through the drag chain hole).
+
+![](pictures/2022-11-13_1_nevermore.jpg)
+
+The filter wouldn’t start on the first attempt because the cable had the wrong
+polarity; the removal of the cables from the JST plug again was a bit difficult,
+but I managed to flip them, and the fans started working. It’s super nice to be
+able to shut off the relay for the 24V circuit, I could do this whole thing
+while the Raspi was powered.
+
+## Purge bucket hacking and slashing
+
+In the last session, I remarked that the Klicky hits the purge bucket. I used
+side cutters to get rid of some of the bucket, and the layer lines allowed me to
+cleanly pry off the rest of the bucket so that it is less high on one side. This
+fixes the Klicky issue, without having to do any CAD modding. I also put some
+Acetone onto the wound to make it heal better. Get well soon, purge bucket.
+
+![](pictures/2022-11-13_2_purge-bucket.jpg)
+
+Times:
+  - Mechanical: 20h15m + 1h (Nevermore, purge bucket) = 21h15m
+  - Electronics: 16h15m + 15m (Nevermore) = 16h30m
+  - Software: 17h30m
+  - Total: 54h + 1h15m = 55h15m
