@@ -27,8 +27,6 @@ files = [
     { "local": f"{local_prefix}/files/printer/klicky/klicky-variables.cfg",             "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-variables.cfg" },
     { "local": f"{local_prefix}/files/printer/klicky/klicky-z-tilt-adjust.cfg",         "voron": f"{voron_home}/klipper_config/printer/klicky/klicky-z-tilt-adjust.cfg" },
 
-    { "local": f"{local_prefix}/files/printer/nozzle_scrub/scrub.cfg", "voron": f"{voron_home}/klipper_config/printer/nozzle_scrub/scrub.cfg" },
-
     { "local": f"{local_prefix}/files/klipper_plugins/z_calibration/z_calibration.py", "voron": f"{voron_home}/klipper/klippy/extras/z_calibration.py" },
 ]
 
