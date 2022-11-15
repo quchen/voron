@@ -1217,3 +1217,36 @@ Times:
   - Electronics: 16h15m + 15m (Nevermore) = 16h30m
   - Software: 17h30m
   - Total: 54h + 1h15m = 55h15m
+
+# 2022-11-15
+
+## Enabling exclude object
+
+This is not something I did today, but since I used it yesterday during a
+partially failed print, here’s how Klipper’s Exclude Object functionality works.
+
+![](pictures/2022-11-15_1_exclude-object-gui.png)
+
+Simply click on the part you want to stop (first layer issues, not needed
+anymore, etc.) and it will be ignored during the remainder of the print.
+
+Enabling this is quite easy:
+
+1. In the slicer (SuperSlicer, in my case), enable _Label objects_ in _Print
+   settings → Output options_.
+2. In `moonraker.conf` add
+   ```ini
+   [file_manager]
+   enable_object_processing: True
+   ```
+3. In `printer.cfg`, add `[exclude_object]` (argument-less section). Forgetting
+   to do this creates lots of (harmless) `Unknown command: EXCLUDE_OBJECT_START`
+   errors during printing.
+
+That’s it.
+
+Times:
+  - Mechanical: 21h15m
+  - Electronics: 16h30m
+  - Software: 17h30m + 15m = 17h 45m
+  - Total: 55h15m + 15m = 55h30m
