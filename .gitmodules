@@ -1,3 +1,6 @@
 [submodule "manuals/octopus"]
 	path = manuals/octopus
 	url = git@github.com:bigtreetech/BIGTREETECH-OCTOPUS-Pro.git
+[submodule "manuals/voron-2"]
+	path = manuals/voron-2
+	url = git@github.com:VoronDesign/Voron-2.git
