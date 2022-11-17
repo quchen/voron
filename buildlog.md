@@ -1253,8 +1253,26 @@ Enabling this is quite easy:
 
 That’s it.
 
+## Flow rate measurements (2h)
+
+I spent roughly 2h on handwriting GCode (macros) for nozzle flow rate testing.
+The idea is to extrude a certain length of filament at some volumetric flow
+rate, to determine the limit of the hotend/nozzle combo.
+
+Some emergency restarts were required when the nozzle didn’t lift enough, and
+became a pea-sized blob of goo. Nothing bad happened, but now the relay is
+broken (permanently on). It might also be the GPIO pin on the Raspi. Strange,
+because from its point of view an emergency shutdown is nothing special: send
+GCode, flip GPIO output pin. Luckily, I have a spare relay that I can use.
+
 Times:
   - Mechanical: 21h15m
   - Electronics: 16h30m
-  - Software: 17h30m + 15m = 17h 45m
-  - Total: 55h15m + 15m = 55h30m
+  - Software: 17h30m + 15m (exclude object) + 2h (gcode) = 19h 45m
+  - Total: 55h15m + 2h15m = 57h30m
+
+# 2022-11-17
+
+## Replacement relay (15m)
+
+It looks like the relay was the broken part, not the GPIO parts.
