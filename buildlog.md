@@ -70,9 +70,13 @@ when I use the hex key with the worse lever, my finger hurts when turning them.
 
 Installed the heat bed rails by estimating the center of the bed with a tape
 measure, and going from there with the caliper. Distance between the extrusions
-is 130mm±<0.2mm, way more accurate than I need. I do have an offset by 0.5mm
-to the left though, which I will worry about when installing the bed, which
-should give me much more practical guidance.
+is 130mm±<0.2mm, way more accurate than I need. I do have an offset by 0.5mm to
+the left though, which I will worry about when installing the bed, which should
+give me much more practical guidance. **Note from the future:** there is a
+[simple alignment helper mod][bed-rails-alignment] that would have made this
+much easier.
+
+[bed-rails-alignment]: https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/GadgetAngel/Bed_Support_Alignment_Tools
 
 ![](pictures/2022-10-25_5_frame-done.jpg)
 
@@ -91,7 +95,9 @@ The next 45min I installed the rails. I got one nut the wrong way round; it’s
 not noticeable but _I know_. It’ll be my secret. Nothing special here, just
 juggling with Loctite hardening, and aligning them quick enough. The plastic
 rail adjustment clamps are a blessing. Oh and my Yubikey is 3.5mm thick, so I
-used that as a spacer for the gap at the bottom of the Z rails.
+used that as a spacer for the gap at the bottom of the Z rails. **Note from 50h
+in the future:** A bigger gap makes it easier to insert covers later. There is
+zero need to have the carriages go that deep. Make it 5mm or even 10mm!
 
 ![](pictures/2022-10-26_1_rail-installation.jpg)
 
@@ -125,7 +131,7 @@ design.
 
 2h30m Session; the frame is now super done, for a total of 5h30m.
 
-## Gantry
+## Gantry (3h30m)
 
 Gantry time! At first I thought Pif had forgotten the B idlers, but the parts
 just look different, and everything was there. A couple of heat inserts, lots of
@@ -176,7 +182,7 @@ at least 1m for the 250mm printer, so I won’t have usable leftovers anyway).
 
 The 15min bring the total time to 9h15.
 
-## Belting
+## Belting (2h)
 
 30min for inserting the Z belts. I cut them 20cm too long, the »minimum« of 1m
 from the manual would still have had 10cm slack as it turns out. This step is
@@ -229,7 +235,7 @@ spent 2h on the whole belting topic, with a total of 11h15m so far.
 
 # 2022-10-28 Print head, part 1
 
-## Clockwork
+## Clockwork (1h30m)
 
 More heat inserts, yippee! Although I must say the design is much less friendly.
 Some inserts had shallow sockets so the soldering tip penetrated the plastic,
@@ -259,9 +265,7 @@ build time so far.
 
 # 2022-10-31 Print head, part 2
 
-## Hotend
-
-## Stealthburner
+## Stealthburner (1h30m)
 
 I added the hotend; the orientation is such that the beveled end is facing the
 front panel. Cable routing required some small amount of force; orienting the
@@ -303,7 +307,7 @@ With 1h30m in this session, I spent 14h15m on mechanical assembly.
 
 # 2022-11-01 Kickoff for wiring
 
-## Assemble mounts
+## Assemble mounts (2h30m)
 
 Raspi, Octopus, SSR: just screwed on the holds without washers. Uneventful. The
 power switch is hard to put on the frame when the switch/inlet are put in, so I
@@ -323,7 +327,7 @@ centimeters play left and right, and retighten them at a more useful distance.
 
 2h30m so far, 2h30m for electric assembly, and total build time 16h45m.
 
-## Octopus setup
+## Octopus setup (30m)
 
 For the Octopus, I first removed all jumpers, as the manual says. I then set all
 fans and the probe input to 24V and added the drivers. Should I fry the board,
@@ -334,17 +338,17 @@ here are pictures of the electrical setup for later reference.
 ![](pictures/2022-10-31_11_octopus-with-drivers.jpg)
 
 The gap in the drivers line is because motor 2 (0-based indexing) has two slots,
-so I’ve skipped motor 2.2 and only used 2.1. **Note:** I later found out this
-was a incorrect, it is corrected in a later step! There are 8 driver slots for 8
-drivers, but there are 9 motor slots, and the driver in position 2 of 7
-(0-based) has two motor slots that can be driven by the same driver. It is valid
-wiring, looks awkward, and would at least not fry the board if done this way.
+so I’ve skipped motor 2.2 and only used 2.1. **Note from the future:** thsi was
+incorrect, and fixed a later step! There are 8 driver slots for 8 drivers, but
+there are 9 motor slots, and the driver in position 2 of 7 (0-based) has two
+motor slots that can be driven by the same driver. It is valid wiring, looks
+awkward, and would at least not fry the board if done this way.
 
 This step took me around 20min, but I also watched a video on how to assemble
 the heatbed which I still have to add, bringing the electrical part to 3h, with
 a total build time of 17h15m.
 
-## Wiring AC, part 1
+## Wiring AC, part 1 (1h15m)
 
 Wiring is a pain! I spent 1h15m on trying to figure out the pieces of shit UK
 clamps, only to realize that I bought Wago clamps for exactly the same purpose.
@@ -357,9 +361,7 @@ decide for the other design, should I want to.
 
 4h15m on electrical thus far, total build time 18h.
 
-
-
-## Intermezzo: heatbed
+## Intermezzo: heatbed (30m)
 
 I’ve never glued on a heatbed, so here goes nothing! Cleaned the cast aluminium
 plate with IPA until _nothing_ was visble on the cloth anymore, then peeled off
@@ -384,8 +386,7 @@ I must say, I think I did this quite well for the first time. No bubbles to be
 seen, very symmetric. Since this wasn’t really part of electrical assembly, I’m
 leaving that total at 4h15, but the total build time increases to 18h30m.
 
-
-## Wiring AC, part 2
+## Wiring AC, part 2 (1h30m)
 
 Meanwhile, the Wago mount clamp has finished printing, time to continure wiring!
 Up to a couple of cables that were too short and constrained my choice of
@@ -424,7 +425,10 @@ In the last session, I made a couple of mistakes.
 
 1. I misunderstood the bed connectors of the Octopus. The correct way of wiring
    is that the board routes `bed power` to `bed out` based on a Mosfet, and
-   controls heating this way.
+   controls heating this way. **Note from the future:** the bed in/outputs
+   aren’t needed, because I have a separate relay that a thermal output can
+   handle. The bed in/out are only needed when heating the bed directly over the
+   Octopus.
 2. I also misunderstood `motor power`. This is only necessary if the bed power
    is a different one than the board power. In my case, both are 24V (and not,
    say, 48V for the motors), so I can just leave the `motor power` unconnected.
@@ -562,17 +566,17 @@ Times:
 
 # 2022-11-04
 
-## Session one: wiring
+## Session one: wiring (45m)
 
-Spent 45m more wiring. Broken window theory proves correct again, I’m making
-more of a mess because there is a mess already.
+Broken window theory proves correct again, I’m making more of a mess because
+there is a mess already.
 
 ![](pictures/2022-11-04_1_electric-bowels.jpg)
 
 Started machine: does not smoke. Connect to Mainsail. I see the heater
 temperature!
 
-## Session two: configuration out of home
+## Session two: configuration out of home (2h)
 
 Time for some configuration. Spent two hours giving the pins aliases. I did not
 have the Voron available, so I configured the motors blindly with _lots_ of TODO
@@ -594,7 +598,10 @@ testing first! I also removed the circuits to bed in/out ports of the Octopus,
 since the bed pulls its power from mains via the big relay, and that one can be
 triggered using a normal heater output.
 
-I thought about skipping LED wiring for now, but I’m glad I went for it, because I was missing a cable! Where was it? Turns out I wired probe1 (meant for inductive) instead of probe0 (Klicky). Klicky has two poles, inductive 3, so that’s where my cable was hiding! Anyway, LED wired, Klicky wired.
+I thought about skipping LED wiring for now, but I’m glad I went for it, because
+I was missing a cable! Where was it? Turns out I wired probe1 (meant for
+inductive) instead of probe0 (Klicky). Klicky has two poles, inductive 3, so
+that’s where my cable was hiding! Anyway, LED wired, Klicky wired.
 
 ### Stepper buzzing
 
@@ -683,7 +690,8 @@ which makes sense after the bed heating test.
 Times:
   - Mechanical: 15h15m + 15m (sexbolt, cleanup) = 15h30m
   - Electronics: 11h30m + 1h45m (bed, thermistors, sexbolt) = 13h15m
-  - Software: 1h15m + 2h (config, blind) + 3h (config: buzz, homing, LEDs, fans, heating) = 6h15m
+  - Software: 1h15m + 2h (config, blind) + 3h (config: buzz, homing, LEDs, fans,
+    heating) = 6h15m
   - Total: 28h + 7h = 35h
 
 
@@ -693,9 +701,10 @@ Times:
 
 I’m losing track of things to do, so I’ve created a Trello board to keep my
 TODOs better than as a loose collection of comments here. Let’s see how that
-goes.
+goes. **Note from the future:** This was a good idea. So many things to do and
+try.
 
-## Sexbolt Re-reassembly
+## Sexbolt Re-reassembly (15m)
 
 The bed of the MagicPhoenix kit is a bit higher than the normal bed, so the
 Sexbolt was sitting too low for the nozzle to touch. Took it apart again
@@ -814,13 +823,13 @@ reason that one is part of Pif, even though it’s not super necessary to get
 anything done (unlike e.g. the side panel fasteners, which are pretty much
 _required_ for ABS printing).
 
-## Spool holder
+## Spool holder (15m)
 
 Simple enough, followed the instructions. I didn’t glue the PTFE tube into the
 holder because it is bent in one direction from being spooled up, and that could
 be used to have a tight mechanical fit.
 
-## Calibrate extruder, part 2
+## Calibrate extruder, part 2 (2h30m)
 
 I cut ~10mm of PTFE tube open so I could clip it around the filament, which now
 has its other end hidden deep into a big spool. This is my new extrusion marker.
@@ -898,7 +907,7 @@ Sexbolt, I manually figured out by nudging the print head there.
 
 [klicky-github]: https://github.com/jlas1/Klicky-Probe
 
-## Quad Gantry Leveling
+## Quad Gantry Leveling (15m)
 
 QGL probes the bed on its four corners, and adjusts the Z motors so the gantry
 is parallel to the print bed. Configuration is simple enough, it pretty much
@@ -966,14 +975,15 @@ around 12h (wat) on the printer today, all of it on configuration.
 
 # 2022-11-06
 
-## Foam pads for side panels
+## Foam pads for side panels (1h)
 
 It took me 45m to glue the foam strips onto the panels for the back, top, and
 two sides. I postponed it because I thought it wasn’t super necessary for the
 initial prints, and because it would not be fun. I think I was wrong on both
 accounts: chamber temperatures over 40°C were super hard to attain
 (41-dot-something degrees after the 1h calibration cube prine!), and also it
-actually was fun to attach them accurately! I should have done this much earlier.
+actually was fun to attach them accurately! I should have done this much
+earlier.
 
 I also did the whole Loctite trick for the couple of panel holders my friend got
 me for cheap removable panels: secure them with M3 hammer nuts with Loctite, but
@@ -984,12 +994,11 @@ In total, this is 1h mechanical assembly today.
 
 ## Involuntary first layer art
 
-The rest of the time I spent on
-trying to print some smaller addons, but I’m having serious trouble with bed
-adhesion, and the first layer is also 0.05mm too low so that I can hear the
-nozzle scratch over the surface if I don’t calibrate it quickly enough. Bed is
-at 110°C, chamber at 44°C, still I’m getting results like this test piece
-(single .2mm layer rectangle):
+The rest of the time I spent on trying to print some smaller addons, but I’m
+having serious trouble with bed adhesion, and the first layer is also 0.05mm too
+low so that I can hear the nozzle scratch over the surface if I don’t calibrate
+it quickly enough. Bed is at 110°C, chamber at 44°C, still I’m getting results
+like this test piece (single .2mm layer rectangle):
 
 ![](pictures/2022-11-06_1_terrible-first-layer.jpg)
 
@@ -1025,7 +1034,7 @@ Times:
 
 # 2022-11-08
 
-## Fixing mysterious motor outage
+## Fixing mysterious motor outage (30m)
 
 Everything was fine yesterday, I showed the printer to someone, movement was
 fine. The next day, stepper A (right) would only vibrate, not move. What!
@@ -1037,15 +1046,14 @@ fine. The next day, stepper A (right) would only vibrate, not move. What!
   Expectation: B misbehaves instead of A. Result: both behave. Umm what? Okay,
   cool that it’s fixed, but I have learned _nothing_.
 
-## Cover exhaust slot
+## Cover exhaust slot (15m)
 
 While at it I also put in the cover for the exhaust slot, replacing my not very
 sturdy cardboard-and-adhesive-tape construction.
 
 ![](pictures/2022-11-08_1_back-cover.jpg)
 
-## 24V relay
-
+## 24V relay (1h45m)
 
 In case of an emergency exit or Klipper otherwise messing up, I want power to be
 taken away from the Octopus. This will stop heating, printing, everything. For
@@ -1116,7 +1124,7 @@ up.
 I spent a total 1h45m on this.
 
 Times:
-  - Mechanical: 18h + 15m (back panel) = 18h15m
+  - Mechanical: 18h + 15m (exhaust slot) = 18h15m
   - Electronics: 14h + 30m (fixing motors) + 1h45m (24V relay) = 16h15m
   - Software: 17h
   - Total: 49h + 2h30m = 51h30m
@@ -1147,7 +1155,7 @@ with the Mainsail preview of the GCode I counted the lines, and settled for
 I did everything pretty much in one go, for a 2h30m session. Pretty much all of
 it was mechanical (plugged in two fan cables), and some parameter tuning.
 
-# Decontaminator
+# Decontaminator (2h)
 
 The decontaminator is a little brush with a bucket next to it. The idea is to
 extrude some filament, wipe the nozzle on the brush, and have a clean start
@@ -1162,7 +1170,7 @@ decontaminator yet though, so this will have to wait until later.
 
 ![](pictures/2022-11-10_1_decontaminator.jpg)
 
-# Electronics fans
+# Electronics fans (εm)
 
 I installed fans for the electronics compartment. After an initial test of
 having them PID controlled and failing to keep them to low, non-oscillating
@@ -1183,7 +1191,7 @@ Times:
 
 # 2022-11-13
 
-## Nevermore (activated charcoal chamber filter)
+## Nevermore activated charcoal chamber filter (45m)
 
 I finally put in the Nevermore, an activated charcoal filter to get rid of that
 cancerous styrene ABS produces when heated. I’ve had to reprint the charcoal
@@ -1202,7 +1210,7 @@ but I managed to flip them, and the fans started working. It’s super nice to b
 able to shut off the relay for the 24V circuit, I could do this whole thing
 while the Raspi was powered.
 
-## Purge bucket hacking and slashing
+## Purge bucket hacking and slashing (15m)
 
 In the last session, I remarked that the Klicky hits the purge bucket. I used
 side cutters to get rid of some of the bucket, and the layer lines allowed me to
@@ -1213,14 +1221,14 @@ Acetone onto the wound to make it heal better. Get well soon, purge bucket.
 ![](pictures/2022-11-13_2_purge-bucket.jpg)
 
 Times:
-  - Mechanical: 20h15m + 1h (Nevermore, purge bucket) = 21h15m
+  - Mechanical: 20h15m + 45m (Nevermore) + 15m (purge bucket) = 21h15m
   - Electronics: 16h15m + 15m (Nevermore) = 16h30m
   - Software: 17h30m
   - Total: 54h + 1h15m = 55h15m
 
 # 2022-11-15
 
-## Enabling exclude object
+## Enabling exclude object (15m)
 
 This is not something I did today, but since I used it yesterday during a
 partially failed print, here’s how Klipper’s Exclude Object functionality works.
