@@ -1268,7 +1268,7 @@ GCode, flip GPIO output pin. Luckily, I have a spare relay that I can use.
 Times:
   - Mechanical: 21h15m
   - Electronics: 16h30m
-  - Software: 17h30m + 15m (exclude object) + 2h (gcode) = 19h 45m
+  - Software: 17h30m + 15m (exclude object) + 2h (gcode) = 19h45m
   - Total: 55h15m + 2h15m = 57h30m
 
 # 2022-11-17
@@ -1276,3 +1276,34 @@ Times:
 ## Replacement relay (15m)
 
 It looks like the relay was the broken part, not the GPIO parts.
+
+# 2022-11-19
+
+Today I mounted the screen, and also put the breakout PCB onto a DIN clamp that
+did not involve a ziptie. The config I simply copied from a friend, which didn’t
+really cost me any time. 30m.
+
+![](pictures/2022-11-19_1_display.jpg)
+
+I then took 1h30m to finally start the rewiring.
+
+![](pictures/2022-11-19_2_wiring-before.jpg)
+
+The motors are the closest to the bed, one layer above are the sensors and the
+breakout PCB cables. It wasn’t terrible to do, but I would lie if I said it was
+a lot of fun. Still, it looks much cleaner already.
+
+![](pictures/2022-11-19_3_wiring-after.jpg)
+
+I haven’t touched the AC/DC wiring much, that will have to wait until another
+time.
+
+Oh, and the relay did not allow me to turn off the Octopus earlier. Looks like a
+systematic problem to me! Maybe I should remove it in case it starts acting up
+during printing?
+
+Times:
+  - Mechanical: 21h15m + 30m (screen, PCB mount) = 21h45m
+  - Electronics: 16h30m + 1h30m (rewiring) + 15m (relay replacement) = 18h15m
+  - Software: 19h45m + εm (screen config) = 19h45m
+  - Total: 55h15m + 2h15m = 57h30m
