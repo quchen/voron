@@ -1425,3 +1425,39 @@ Times:
   - Electronics: 16h30m + 1h30m (rewiring) + 15m (relay replacement) + 1h15m (accelerometer) = 19h30m
   - Software: 19h45m + εm (screen config) + 1h (resonance measurements) = 20h45m
   - Total: 57h30m + 4h30m = 62h
+
+# 2022-11-20 Speed tuning
+
+2h speed tuning using [Andrew Ellis’ macro][andrew-ellis-speed-macro]. Settled
+for 10k mm/s² acceleration and 500 mm/s speed. 700 mm/s speed skips steps (and
+bangs the gantry against itself), 12k mm/s² works without errors so 10k is a
+safe value. All tests were run with the printer cold, so some generous safety
+margins are in order.
+
+[andrew-ellis-speed-macro]: https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/22ed63d984c43e63ba6dfdd223ffaa40d82aa779/macros/TEST_SPEED.cfg
+
+I then entered these values in my slicer as machine limits, and tried to get a
+Benchie to slice to less than 30m. I didn’t quite manage to do it, but
+`Print settings | Speed` is where it’s at. Accelerations in particular play a
+big role in the estimated printing time. I pushed them hard-but-not-too hard,
+and got a 38m Benchie according to the slicer. Most time is spent on the
+perimeters, the settings for those in the end were:
+
+### Speed
+
+- Default speed: 200 mm/s
+- Perimeter speed: Internal 100% (of default), external 50% (of internal)
+- Infill speed: Solid 120%, Sparse 100% (of solid, so 120% default), top solid 50% (of solid, so 60% of default).
+
+### Acceleration
+
+- Default acceleration: 8000 mm/s²
+- Internal perimeters: 100%
+- First Layer: 2000 mm/s
+- Rest all set to 0
+
+Times:
+  - Mechanical: 21h45m
+  - Electronics: 19h30m
+  - Software: 20h45m + 2h = 22h45m
+  - Total: 62h + 2h = 64h

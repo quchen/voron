@@ -12,9 +12,10 @@ local_prefix = os.path.realpath(os.path.dirname(__file__))
 voron_home = f"/home/{voron_user}"
 files = [
     { "local": f"{local_prefix}/files/printer.cfg", "voron": f"{voron_home}/klipper_config/printer.cfg" },
+    { "local": f"{local_prefix}/files/printer/button_macros.cfg", "voron": f"{voron_home}/klipper_config/printer/button_macros.cfg" },
     { "local": f"{local_prefix}/files/printer/leds.cfg", "voron": f"{voron_home}/klipper_config/printer/leds.cfg" },
     { "local": f"{local_prefix}/files/printer/slicer_macros.cfg", "voron": f"{voron_home}/klipper_config/printer/slicer_macros.cfg" },
-    { "local": f"{local_prefix}/files/printer/button_macros.cfg", "voron": f"{voron_home}/klipper_config/printer/button_macros.cfg" },
+    { "local": f"{local_prefix}/files/printer/TEST_SPEED.cfg", "voron": f"{voron_home}/klipper_config/printer/TEST_SPEED.cfg" },
     { "local": f"{local_prefix}/files/printer/utility_macros.cfg", "voron": f"{voron_home}/klipper_config/printer/utility_macros.cfg" },
 
     { "local": f"{local_prefix}/files/moonraker.conf", "voron": f"{voron_home}/klipper_config/moonraker.conf" },
