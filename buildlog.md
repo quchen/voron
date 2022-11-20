@@ -1279,13 +1279,17 @@ It looks like the relay was the broken part, not the GPIO parts.
 
 # 2022-11-19
 
-Today I mounted the screen, and also put the breakout PCB onto a DIN clamp that
+## Display installation (30m)
+
+Today I mounted the display, and also put the breakout PCB onto a DIN clamp that
 did not involve a ziptie. The config I simply copied from a friend, which didn’t
-really cost me any time. 30m.
+really cost me any time.
 
 ![](pictures/2022-11-19_1_display.jpg)
 
-I then took 1h30m to finally start the rewiring.
+## Rewiring (1h30m)
+
+Next stop was something I had postponed _many_ times, cleaning up the wiring.
 
 ![](pictures/2022-11-19_2_wiring-before.jpg)
 
@@ -1302,8 +1306,122 @@ Oh, and the relay did not allow me to turn off the Octopus earlier. Looks like a
 systematic problem to me! Maybe I should remove it in case it starts acting up
 during printing?
 
+## Resonance compensation
+
+### Wiring (1h15m)
+
+I spent 1h15m looking for a cable, crimping female connectors on one end (I’m a
+slow crimper), putting the pins onto the Raspi and double-checking the wiring
+mechanically (can’t buy a new one if I fry it). I followed
+[the guide in the Klipper docs][klipper-measuring-resonances] and verified the
+Raspi pinout with another website.
+
+[klipper-measuring-resonances]: https://www.klipper3d.org/Measuring_Resonances.html
+
+Cool, let’s go. No smoke when starting the Raspi, excellent.
+
+### Measuring (1h)
+
+This is pretty straightforward. The documentation is a bit spread out in the
+Klipper docs between the config docs and the measurement section, but it’s not
+too hard to put them together.
+
+```ini
+[adxl345]
+# Yes, None, not the Raspi pin CS is connected to (GPIO08/SPI0_CE0_N in my case).
+cs_pin: raspi:None
+
+[resonance_tester]
+accel_chip: adxl345
+axes_map: y, z, x # Because of my mounting: printer(x,y,z) = sensor(y,z,x)
+probe_points:
+    125, 125, 25 # Bed center, Z in safe height
+accel_per_hz: 25
+  # ^ Default is 75, but start with lower
+  # accelerations to check out how loud it is
+hz_per_sec: 2
+  # ^ Default is 1, but 2 takes less time at the
+  # cost of precision. Just right for testing
+  # the setup before the measurement.
+```
+
+Upload the config, accelerometer, what do you say?
+
+```
+> ACCELEROMETER_QUERY
+accelerometer values (x, y, z): -296.082377, 4367.215058, 9729.412825
+```
+
+Okay that’s three values and not an error, I guess that’s not bad. Resonance
+measurement time!
+
+```
+TEST_RESONANCES AXIS=X
+```
+
+The print head is audibly-but-not-visually vibrating. Less than an electric
+toothbrush. Alright, increase `accel_per_hz` to `50`. Approaching the electric
+toothbrush. `75`, Klipper’s default value. Like an electric toothbrush but with
+more mass. Almost, but not quite yet, worried about my neighbours (it’s 2
+o’clock). Okay, time for the real run: first x then y, with `hz_per_sec: 1`.
+
+Run the analysis tool,
+
+```bash
+for file in /tmp/resonances_{x,y}_*.csv; do
+    ~/klipper/scripts/calibrate_shaper.py "$file" -o "$file.png"
+done
+```
+
+And here’s the output with some nice recommendations:
+
+```
+Fitted shaper 'zv' frequency = 50.6 Hz (vibrations = 4.5%, smoothing ~= 0.066)
+To avoid too much smoothing with 'zv', suggested max_accel <= 10000 mm/sec^2
+Fitted shaper 'mzv' frequency = 48.8 Hz (vibrations = 0.0%, smoothing ~= 0.086)
+To avoid too much smoothing with 'mzv', suggested max_accel <= 7000 mm/sec^2
+Fitted shaper 'ei' frequency = 58.6 Hz (vibrations = 0.0%, smoothing ~= 0.094)
+To avoid too much smoothing with 'ei', suggested max_accel <= 6400 mm/sec^2
+Fitted shaper '2hump_ei' frequency = 73.2 Hz (vibrations = 0.0%, smoothing ~= 0.101)
+To avoid too much smoothing with '2hump_ei', suggested max_accel <= 6000 mm/sec^2
+Fitted shaper '3hump_ei' frequency = 88.2 Hz (vibrations = 0.0%, smoothing ~= 0.105)
+To avoid too much smoothing with '3hump_ei', suggested max_accel <= 5700 mm/sec^2
+Recommended shaper is mzv @ 48.8 Hz
+```
+
+![](pictures/2022-11-19_4_input-shaping-x.png)
+
+```
+Fitted shaper 'zv' frequency = 40.8 Hz (vibrations = 30.4%, smoothing ~= 0.097)
+To avoid too much smoothing with 'zv', suggested max_accel <= 6500 mm/sec^2
+Fitted shaper 'mzv' frequency = 37.0 Hz (vibrations = 10.0%, smoothing ~= 0.149)
+To avoid too much smoothing with 'mzv', suggested max_accel <= 4000 mm/sec^2
+Fitted shaper 'ei' frequency = 33.8 Hz (vibrations = 10.7%, smoothing ~= 0.282)
+To avoid too much smoothing with 'ei', suggested max_accel <= 2100 mm/sec^2
+Fitted shaper '2hump_ei' frequency = 48.6 Hz (vibrations = 2.5%, smoothing ~= 0.228)
+To avoid too much smoothing with '2hump_ei', suggested max_accel <= 2600 mm/sec^2
+Fitted shaper '3hump_ei' frequency = 48.0 Hz (vibrations = 0.1%, smoothing ~= 0.356)
+To avoid too much smoothing with '3hump_ei', suggested max_accel <= 1500 mm/sec^2
+Recommended shaper is 2hump_ei @ 48.6 Hz
+```
+
+![](pictures/2022-11-19_5_input-shaping-y.png)
+
+The physicist in me is fastinated with the fact that the two axes have different
+algorithm recommendations, most likely because the y axis has a lot more mass to
+move, but the human in me who needs to go to bed simply copies the
+recommendations to the config.
+
+```ini
+[input_shaper]
+shaper_freq_x: 48.8
+shaper_type_x: mzv
+shaper_freq_y: 48.6
+shaper_type_y: 2hump_ei
+```
+
 Times:
   - Mechanical: 21h15m + 30m (screen, PCB mount) = 21h45m
-  - Electronics: 16h30m + 1h30m (rewiring) + 15m (relay replacement) = 18h15m
-  - Software: 19h45m + εm (screen config) = 19h45m
-  - Total: 55h15m + 2h15m = 57h30m
+  - Electronics: 16h30m + 1h30m (rewiring) + 15m (relay replacement) + 1h15m (accelerometer) = 19h30m
+  - Software: 19h45m + εm (screen config) + 1h (resonance measurements) = 20h45m
+  - Total: 57h30m + 4h30m = 62h
