@@ -1461,3 +1461,86 @@ Times:
   - Electronics: 19h30m
   - Software: 20h45m + 2h = 22h45m
   - Total: 62h + 2h = 64h
+
+# 2022-11-{24,25}
+
+## No more adhesion problems (15m)
+
+My bed had two issues: a) I violated it multiple times by audibly scratching the
+nozzle over it because of bad Z calibration, leading to very visible markings
+all over the place; b) low adhesion, sometimes even with brim on big parts. My
+brother recommended to sand the PEI sheet with fine sandpaper. Bought some
+P1200, sanded it down, printed a Voron test cube (24m, limited by flowrate of
+15mm/s), and holy shit adhesion is reminding me of PETG. It’s almost too good,
+or maybe _actually_ to good. Time to disable brims in the slicer again!
+
+## Flow rate tests revisited
+
+Spent way too much time on this to record it here trying to optimize printing
+the test pieces in bulk. But turns out the nozzle likes to keep plastic stuck to
+it if you don’t smear it on the print bed, so something always caught and moved
+around. In the end I just did single extrusions of 200mm at various feedrates,
+and used my mg scale to measure their masses. I’m not sure how precise that
+cheapo scale is actually, but here’s the data as read from it with the standard
+Phaetus 0.4mm nozzle:
+
+| Flow [mm³/s] | Mass [mg] | Comment |
+| ------------ | --------- | ------- |
+| 10.0         | 514       |
+| 11.0         | 518       |
+| 12.0         | 512       |
+| 13.0         | 512       |
+| 14.0         | 513       |
+| 15.0         | 516       |
+| 16.0         | 504       |
+| 17.0         | 508       |
+| 18.0         | 502       |
+| 19.0         | 502       |
+| 19.5         | 493,486,494,492,495 | Skipping
+| 20.0         | 473       | Skipping
+
+Interestingly enough, the drop is pretty small, and happens around the 15mm³/s
+mark. I think this is a safe setting for further printing with the standard
+nozzle.
+
+Nozzle change, Bondtech CHT 0.4mm. Using some uncalibrated test extrusions I
+figured out skipping happens around 25mm³/s, so I’ll space my measurements out a
+bit.
+
+| Flow [mm³/s] | Mass [mg] | Comment |
+| ------------ | --------- | ------- |
+| 10.0         | 510       |
+| 12.0         | 512       |
+| 14.0         | 521       |
+| 16.0         | 513       |
+| 18.0         | 513       |
+| 19.0         | 506       |
+| 20.0         | 497       |
+| 21.0         | 510       |
+| 22.0         | 506       |
+| 23.0         | 514       |
+| 24.0         | 510       |
+| 25.0         | 506       |
+| 26.0         | 494       | Skipping
+
+This is the data as simple plot,
+
+```mathematica
+ListPlot[
+    {phaetus, cht},
+    AxesOrigin -> {10, 450},
+    AxesLabel -> {"Flowrate [mm³/s]", "Mass [mg]"},
+    PlotLegends -> Placed[{"Phaetus", "Bondtech CHT"}, Below]
+]
+```
+
+![](pictures/2022-11-24_1_flow-testing.png)
+
+What do I see?
+
+- My scale is probably not the best. Cheap one from Amazon.
+- No dramatic falloff before skipping starts. Maybe if my extruder tension was
+  higher, I could push some harder plastic through the nozzle still?
+- Bondtech CHT has much higher flow limits
+- Statistics here are really bad, but data is good enough so I can increase my
+  flow rate limit in the slicer to 20mm³/s with the CHT nozzle
