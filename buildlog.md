@@ -11,12 +11,12 @@ copying them.
 
 Package arrived. Got Pif parts in blue and yellow.
 
-![](pictures/2022-10-25_1_box-overview.jpg)
+![](pictures/2022-10-25/1_box-overview.jpg)
 
 Around 1m² of desk space cleaned, my trusty Prusa 2.5 went onto the gas oven
 (turned off). Build area cleaned, let’s go!
 
-![](pictures/2022-10-25_2_build-space.jpg)
+![](pictures/2022-10-25/2_build-space.jpg)
 
 Time: 15min
 
@@ -27,7 +27,7 @@ this Git repo. 5min
 
 Extrusions sorted and labeled. 10min
 
-![](pictures/2022-10-25_3_sorted-extrusions.jpg)
+![](pictures/2022-10-25/3_sorted-extrusions.jpg)
 
 Adding screws to A extrusions. I remember my friend telling me about the _frame
 spring fasteners_ that they forgot initially. Time to open the
@@ -42,7 +42,7 @@ assembly and squaring. Stopping frame assembly for now.
 15min of unpacking linear rails, finding a suitable glass, and putting the
 sliders into IPA. Now I will go bouldering for real, promise.
 
-![](pictures/2022-10-25_4_bathing-sleds.jpg)
+![](pictures/2022-10-25/4_bathing-sleds.jpg)
 
 Time taken: 1h, total 1h15m.
 
@@ -78,7 +78,7 @@ much easier.
 
 [bed-rails-alignment]: https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/GadgetAngel/Bed_Support_Alignment_Tools
 
-![](pictures/2022-10-25_5_frame-done.jpg)
+![](pictures/2022-10-25/5_frame-done.jpg)
 
 Time taken: 1h45m, for a total of 3h so far.
 
@@ -99,7 +99,7 @@ used that as a spacer for the gap at the bottom of the Z rails. **Note from 50h
 in the future:** A bigger gap makes it easier to insert covers later. There is
 zero need to have the carriages go that deep. Make it 5mm or even 10mm!
 
-![](pictures/2022-10-26_1_rail-installation.jpg)
+![](pictures/2022-10-26/1_rail-installation.jpg)
 
 # DIN rails
 
@@ -107,27 +107,27 @@ zero need to have the carriages go that deep. Make it 5mm or even 10mm!
 rails parallel to the bed rails, but they actually have to be perpendicular.
 Takes a minute to change that though, so no problem.
 
-![](pictures/2022-10-26_2_din-rails.jpg)
+![](pictures/2022-10-26/2_din-rails.jpg)
 
 The next 30 minutes were pure bliss: heat inserts. It’s amazing. I hope there
 are many more. 250 °C on the soldering iron, slowly pushing it in, then flushing
 the surface with a flat piece of plastic for a couple of seconds. All inserts
 are _perfect_. I’m proud.
 
-![](pictures/2022-10-26_3_heat-inserts.jpg)
+![](pictures/2022-10-26/3_heat-inserts.jpg)
 
 The first foot for the frame to stand on took 45 minutes. A couple of small
 mistakes were easy to remedy, namely I screwed the foot onto the wrong side of
 the frame, and also I forgot including the M5 nut for the plastic foot’s foot to
 be fastened to. Neither took more than a minute to fix.
 
-![](pictures/2022-10-26_4_feet.jpg)
+![](pictures/2022-10-26/4_feet.jpg)
 
 Eyedler are super easy to build and install, maybe 20 minutes. I don’t have a
 ball hex key though, so I won’t be able to fasten the belts thanks to their
 design.
 
-![](pictures/2022-10-26_5_eyedlers.jpg)
+![](pictures/2022-10-26/5_eyedlers.jpg)
 
 2h30m Session; the frame is now super done, for a total of 5h30m.
 
@@ -138,7 +138,7 @@ just look different, and everything was there. A couple of heat inserts, lots of
 screws that I don’t fasten yet because I don’t know whether I should wait for
 the wedding with the frame or not.
 
-![](pictures/2022-10-26_6_gantry-halfway.jpg)
+![](pictures/2022-10-26/6_gantry-halfway.jpg)
 
 This is also when I noticed the reason my Loctite doesn’t yield drops without
 extensive begging because – you won’t believe it – it was empty. Visited my
@@ -148,7 +148,7 @@ so far.
 2h more gantry assembly. Lots of screws are only tightened a bit, the goal being
 joining it with the frame and then working out where everything should be.
 
-![](pictures/2022-10-26_7_gantry-before-wedding.jpg)
+![](pictures/2022-10-26/7_gantry-before-wedding.jpg)
 
 It’s now 0:20, the gantry is done, time for the wedding!
 
@@ -158,7 +158,7 @@ it’ll be easier to take out the gantry again, fixing the belts, and while I’
 it tighten some screws. I’ll really have to remember to double-check all the
 gantry screws later.
 
-![](pictures/2022-10-26_8_gantry-inserted.jpg)
+![](pictures/2022-10-26/8_gantry-inserted.jpg)
 
 The gantry took me around 3h30m so far, for a total of 9h assembly at this
 point.
@@ -176,7 +176,7 @@ the 5m×9mm belt into 1.1m strips of equal length for the Z axes (the manual sai
 at least 1m for the 250mm printer, so I won’t have usable leftovers anyway).
 15min.
 
-![](pictures/2022-10-27_1_flying-gantry-z-locks.jpg)
+![](pictures/2022-10-27/1_flying-gantry-z-locks.jpg)
 
 [z-locks]: https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/tallman5/z-locks
 
@@ -189,9 +189,9 @@ from the manual would still have had 10cm slack as it turns out. This step is
 much easier with the whole thing laying on its back; the Z locks are super
 helpful, highly recommended.
 
-![](pictures/2022-10-27_2_z-belting.jpg)
+![](pictures/2022-10-27/2_z-belting.jpg)
 
-![](pictures/2022-10-27_3_z-belts-done.jpg)
+![](pictures/2022-10-27/3_z-belts-done.jpg)
 
 Another 30 minutes later, the A+B belts are done. Some parts are quite finnicky,
 but this is also what made it great fun for me, because there was always some
@@ -205,7 +205,7 @@ paths, their lengths match. Wellllll then, I guess I’ll take them out.
 30s later, 30min of belting undone. At least I know how to thread them now. Cut
 them to equal length to the tooth.
 
-![](pictures/2022-10-27_4_ab-belts-same-length.jpg)
+![](pictures/2022-10-27/4_ab-belts-same-length.jpg)
 
 30 more minutes to insert the belts again. I was faster than the first time, but
 filled the remainder of the time taken with playing around with the carriage.
@@ -216,7 +216,7 @@ together on the carriage was too long; I used a M3x30 instead, matching the one
 in the lower part. The lower one has to leave space for a hall probe magnet, but
 still I’m not sure why the top is longer.
 
-![](pictures/2022-10-27_5_all-belts-installed.jpg)
+![](pictures/2022-10-27/5_all-belts-installed.jpg)
 
 Turns out the machine is already deracked, cool! The carriage moves in Y
 direction with constant resistance, with no X drift along the way, and hits the
@@ -242,14 +242,14 @@ Some inserts had shallow sockets so the soldering tip penetrated the plastic,
 some were hard to reach without melting other parts. None of the mistakes I made
 are visible from the outside though, and even if they were they’re very small.
 
-![](pictures/2022-10-28_1_heat-inserts.jpg)
+![](pictures/2022-10-28/1_heat-inserts.jpg)
 
 The big gear is supposed to not touch plastic; I therefore moved it inwards as
 much as I could. The cost of this is reduced overlap with the driving motor
 gear, but we’re talking about less than a mm here on a motor that does not
 require much power anyway; it drives filament after all, not a ship’s propeller.
 
-![](pictures/2022-10-28_2_clockwork-half-assembled.jpg)
+![](pictures/2022-10-28/2_clockwork-half-assembled.jpg)
 
 I lubricated the passive extruder gear with trusty Traxxas 50k, a silicon-based
 greased that is friendly to plastic, as my collection of Rubik’s Cubes can
@@ -257,7 +257,7 @@ attest to. Alignment of parts was pretty easy. I deviated from the manual by
 securing the closing latch with a M3x8 SHCS (does fit) instead of M3x6 FHCS
 (does not fit) screw.
 
-![](pictures/2022-10-28_3_clockwork-assembled.jpg)
+![](pictures/2022-10-28/3_clockwork-assembled.jpg)
 
 This step took 1h30m. I no longer wonder why it’s called the clockwork, because
 everything is hard to reach and see. Maybe also the big gear. Anyway, 12h45m
@@ -276,11 +276,11 @@ out 10.9mm (should be 11mm), but I think that’s close enough. The socket is
 designed to hold this whole part on its own, at least enough for adding the
 front later. No zipties had to be used to temporarily hold it in place.
 
-![](pictures/2022-10-31_1_hotend-added.jpg)
+![](pictures/2022-10-31/1_hotend-added.jpg)
 
 Up next, LED insertion. Smooth sailing; the cables were a bit long, but easily bent into the plastic gaps.
 
-![](pictures/2022-10-31_2_stealthburner-led-cables.jpg)
+![](pictures/2022-10-31/2_stealthburner-led-cables.jpg)
 
 Taking apart the part cooling fan was a bit tricky, but pushing the latches with
 my tweezers won after a couple of attempts. I cut off the ears with side
@@ -289,18 +289,18 @@ super flat, there is some tolerance in the SB head. When staring at the fan from
 the front long enough it might not be 100% centered, which might be due to the
 non-perfect flush-sanding, but I’ll leave this for a future modding session.
 
-![](pictures/2022-10-31_3_fan-modding.jpg)
+![](pictures/2022-10-31/3_fan-modding.jpg)
 
 The Klicky probe is easy to install; I did not notice the right way to route its
 cable is straight up past the belts and then into a groove made for just that,
 and considered just routing it outside. The Voron devs thought of everything it
 seems!
 
-![](pictures/2022-10-31_4_klicky-probe.jpg)
+![](pictures/2022-10-31/4_klicky-probe.jpg)
 
 Bolted on the front, and mechanical assembly is done! It looks like a Voron now!
 
-![](pictures/2022-10-31_5_mechanical-assembly-done.jpg)
+![](pictures/2022-10-31/5_mechanical-assembly-done.jpg)
 
 With 1h30m in this session, I spent 14h15m on mechanical assembly.
 
@@ -317,13 +317,13 @@ Loctite. The main issue was with the big PSU, it just wouldn’t fit on the DIN
 rails. I found out I could simply unscrew the DIN rails, which have a couple of
 centimeters play left and right, and retighten them at a more useful distance.
 
-![](pictures/2022-10-31_6_mounts-attached.jpg)
+![](pictures/2022-10-31/6_mounts-attached.jpg)
 
-![](pictures/2022-10-31_7_power_inlet.jpg)
+![](pictures/2022-10-31/7_power_inlet.jpg)
 
-![](pictures/2022-10-31_8_xy-endstops.jpg)
+![](pictures/2022-10-31/8_xy-endstops.jpg)
 
-![](pictures/2022-10-31_9_mounts-mounted.jpg)
+![](pictures/2022-10-31/9_mounts-mounted.jpg)
 
 2h30m so far, 2h30m for electric assembly, and total build time 16h45m.
 
@@ -333,9 +333,9 @@ For the Octopus, I first removed all jumpers, as the manual says. I then set all
 fans and the probe input to 24V and added the drivers. Should I fry the board,
 here are pictures of the electrical setup for later reference.
 
-![](pictures/2022-10-31_10_octopus-jumpers.jpg)
+![](pictures/2022-10-31/10_octopus-jumpers.jpg)
 
-![](pictures/2022-10-31_11_octopus-with-drivers.jpg)
+![](pictures/2022-10-31/11_octopus-with-drivers.jpg)
 
 The gap in the drivers line is because motor 2 (0-based indexing) has two slots,
 so I’ve skipped motor 2.2 and only used 2.1. **Note from the future:** thsi was
@@ -375,12 +375,12 @@ flush! After 15min I was done, no bubble to be seen. I put the result upside
 down onto the foam packaging I got the printer parts in, so that the weight of
 the plate can help with a bit of pressure when curing.
 
-![](pictures/2022-10-31_12_magnetic-sheet.jpg)
+![](pictures/2022-10-31/12_magnetic-sheet.jpg)
 
 Next step, the heat sheet. Pretty much the same procedure, same alignment and
 partially peeling off tricks, same 15min.
 
-![](pictures/2022-10-31_13_bed-heater.jpg)
+![](pictures/2022-10-31/13_bed-heater.jpg)
 
 I must say, I think I did this quite well for the first time. No bubbles to be
 seen, very symmetric. Since this wasn’t really part of electrical assembly, I’m
@@ -395,7 +395,7 @@ location for some of the parts, everything went smoothly. Thank you Wago.
 Turned on power, the switch works, and the green status LEDs of the PSUs light
 up as well. 30min (total wiring 4h45m, total 19h).
 
-![](pictures/2022-10-31_14_thanks-wago.jpg)
+![](pictures/2022-10-31/14_thanks-wago.jpg)
 
 For the DC circuit, it looks like the cable to connect both V- of the PSUs is
 missing. I’ll have to remember adding this later!
@@ -417,7 +417,7 @@ Here’s a picture of the current state for your enjoyment.
 
 1h more spent on wiring, so we’re at 5h45m electrical, and 20h total.
 
-![](pictures/2022-10-31_15_ac-dc.jpg)
+![](pictures/2022-10-31/15_ac-dc.jpg)
 
 # 2022-11-01: fixing mistakes and power wiring
 
@@ -462,7 +462,7 @@ In the last session, I made a couple of mistakes.
    gentle shaking. Good enough! (Counting the 30m for this towards total, but
    not electronics, time.)
 
-![](pictures/2022-11-02_1_ac-dc-done.jpg)
+![](pictures/2022-11-02/1_ac-dc-done.jpg)
 
 Time for a last check of everything before flipping the power. There will either
 be smoke, no smoke but nothing useful, or I will be able to connect to Mainsail
@@ -472,7 +472,7 @@ Flick.
 
 LEDs begin to shine. No smoke, no noise.
 
-![](pictures/2022-11-02_2_power-on.jpg)
+![](pictures/2022-11-02/2_power-on.jpg)
 
 Mainsail! Woohooo!! (After connecting the LAN cable. I’ll set up Wifi for the
 Raspi next.)
@@ -502,7 +502,7 @@ any of the nonsense pins I entered, but we’re in software land now! Well, save
 for all the wiring still to be done. The golem has arisen from the dead, while
 it is still paralyzed, it is able to think and communicate.
 
-![](pictures/2022-11-02_3_mainsail-dashboard-working.png)
+![](pictures/2022-11-02/3_mainsail-dashboard-working.png)
 
 Keeping track of time is becoming more and more complicated. I’m adding 1h for
 setting up Mainsail OS on the Raspi (which I had done before the parts even
@@ -523,9 +523,9 @@ cured, and I can cut off the excess. I also cut gaps so I can screw the bed to
 the rails. The first two are abominations, the second two are alright. I’ll keep
 the PEI sheet on as much as I can so nobody notices. 30min mechanical.
 
-![](pictures/2022-11-03_1_cutting-off-magnetic-sheet.jpg)
+![](pictures/2022-11-03/1_cutting-off-magnetic-sheet.jpg)
 
-![](pictures/2022-11-03_2_bed-installed.jpg)
+![](pictures/2022-11-03/2_bed-installed.jpg)
 
 Took a break (bouldering), then started a new session at 22:00. Cable chains time!
 
@@ -536,7 +536,7 @@ temperature measurement, which is a _terrible_ idea to measure so close to the
 hotend), but that shares its slot with, well, the only thermistor slot, so that
 one goes to the hotend one of course. Fans jumpered to 24V.
 
-![](pictures/2022-11-03_3_printhead-pcb.jpg)
+![](pictures/2022-11-03/3_printhead-pcb.jpg)
 
 22:40 toolhead cable chain mounted, but it’s the thick one, meant for the
 electronics-to-gantry part. Argh. Cannot use it because its minimum radius is
@@ -556,7 +556,7 @@ leftover plastic part as spacer so the soldering tips don’t penetrate the
 plastic it lies on. Added Z motor wires, and calling it a day. It’s a terrible,
 terrible mess for later clean up.
 
-![](pictures/2022-11-03_4_messy-wip-wiring.jpg)
+![](pictures/2022-11-03/4_messy-wip-wiring.jpg)
 
 Times:
   - Mechanical: 14h45m + 30m (bed) = 15h15m
@@ -571,7 +571,7 @@ Times:
 Broken window theory proves correct again, I’m making more of a mess because
 there is a mess already.
 
-![](pictures/2022-11-04_1_electric-bowels.jpg)
+![](pictures/2022-11-04/1_electric-bowels.jpg)
 
 Started machine: does not smoke. Connect to Mainsail. I see the heater
 temperature!
@@ -637,7 +637,7 @@ is inverted (towards front instead of back). The
 [MagicPhoenix wiki][mpx-corexy-debug] says to flip motors in that case, which
 was indeed the solution.
 
-![](pictures/2022-11-04_2_endstop-test.png)
+![](pictures/2022-11-04/2_endstop-test.png)
 
 ### LEDs
 
@@ -648,7 +648,7 @@ copying directories. It took me longer than a minute to do so correctly, so I
 gave up (will downloading work, who knows, will it override my home dir, who
 knows). Seriously, fuck the UX and manpages of _so many_ Linux tools.
 
-![](pictures/2022-11-04_3_stealthburner-leds.jpg)
+![](pictures/2022-11-04/3_stealthburner-leds.jpg)
 
 !!! 2h, already entered into timesheet
 
@@ -680,7 +680,7 @@ While waiting for the results, I figured I might as well try out the extruder,
 and indeed, as suspected in the buzzing test, it goes the wrong way. A simple
 reversal of the direction pin should fix this.
 
-![](pictures/2022-11-04_4_heating-pid-tuning.png)
+![](pictures/2022-11-04/4_heating-pid-tuning.png)
 
 ### Chamber temperature sensor
 
@@ -760,7 +760,7 @@ I also downloaded the [Klicky macros from the Github page][github-klicky-macros]
 
 [github-klicky-macros]: https://github.com/jlas1/Klicky-Probe/tree/main/Klipper_macros
 
-![](pictures/2022-11-05_1_adjusting-klicky.jpg)
+![](pictures/2022-11-05/1_adjusting-klicky.jpg)
 
 ## LEDs misbehave
 
@@ -781,7 +781,7 @@ noticed that it won’t let me extrude anymore because nozzle temperature is bel
 (Esun black) with the clockwork open, pushed it all the way through, and got my
 first extrusion.
 
-![](pictures/2022-11-05_2_first-extrusion.jpg)
+![](pictures/2022-11-05/2_first-extrusion.jpg)
 
 Next step, calibration. I cut off the filament at 40mm above the Clockwork, and
 told it to extrude 30mm. It extruded maybe one in this extrusion test #1. Come
@@ -810,7 +810,7 @@ amount. 13.6(…) it is!
 
 New attempt, extrude 30mm; marker went from 83mm to 53mm. Pretty good!
 
-![](pictures/2022-11-05_3_calibrate-extruder-rotation-distance.jpg)
+![](pictures/2022-11-05/3_calibrate-extruder-rotation-distance.jpg)
 
 For some finer calibration, I’ll use up the rest of the test filament I’ve
 inserted. While at it, I might as well use my caliper for some better
@@ -867,7 +867,7 @@ have only ensured it triggers correctly.
 First part, mechanical assembly. Super simple, two heat set inserts, T nuts into
 extrusions, 15min, done.
 
-![](pictures/2022-11-05_4_klicky-attached.jpg)
+![](pictures/2022-11-05/4_klicky-attached.jpg)
 
 Software is next. Surely I’ll need the Klicky location for that, so let’s figure
 this out. Wait a second, the holder on the print head crashes into the
@@ -875,7 +875,7 @@ gantry-attached holder if I do that, the toolhead holder is too low. But even if
 I fix that, doesn’t that mean part of the print bed is inaccessible, because
 during a print the Klicky would be picked up?
 
-![](pictures/2022-11-05_5_klicky-height-bad.jpg)
+![](pictures/2022-11-05/5_klicky-height-bad.jpg)
 
 I just worked on configuration for 2h, let’s see what I can still remember for
 the build log. So, homing XYZ works, but is now done by the Klicky scripts,
@@ -917,7 +917,7 @@ comes out of Klicky and setting the probing coordinates.
 
 Now that the gantry is level, it’s time for having a look at the bed!
 
-![](pictures/2022-11-05_6_bed-mesh.png)
+![](pictures/2022-11-05/6_bed-mesh.png)
 
 0.071mm variance. I don’t know whether that is very good, but it certainly isn’t
 terrible considering it’s well below a typical layer height.
@@ -929,11 +929,11 @@ QGL, all the things. 30min.
 
 Since I’ll be printing ABS, I decided to attach the panels earlier rather than later.
 
-![](pictures/2022-11-05_7_panels-attached.jpg)
+![](pictures/2022-11-05/7_panels-attached.jpg)
 
 And now let’s print the cube! Here are the first couple of layers:
 
-![](pictures/2022-11-05_8_very-bad-calibration-cube.jpg)
+![](pictures/2022-11-05/8_very-bad-calibration-cube.jpg)
 
 lol, the Z offset is _off_. If the nozzle has the wrong height, at least I had
 the non-damaging version of it!
@@ -947,13 +947,13 @@ After a few hours I found out multiple things.
 
 And reprint. It’s a cube! Finally!
 
-![](pictures/2022-11-05_9_calibration-cube-half-done.jpg)
+![](pictures/2022-11-05/9_calibration-cube-half-done.jpg)
 
-![](pictures/2022-11-05_10_calibration-cube-done.jpg)
+![](pictures/2022-11-05/10_calibration-cube-done.jpg)
 
 I can’t quite get a bearing in without hammering on it, but the exterior measurements are spot on.
 
-![](pictures/2022-11-05_11_accurate-cube.jpg)
+![](pictures/2022-11-05/11_accurate-cube.jpg)
 
 The first layer was _terrible_ though, the Z offset was wrong, and I manually
 had to add a bit to it. I used the textured sheet because I don’t like it much
@@ -961,7 +961,7 @@ and it’s a good spoil surface. I’m now printing a 3-layer high box just so I
 hopefully peel it off the print sheet and get the otherwise irremovable residue
 of the cube’s skirt off.
 
-![](pictures/2022-11-05_12_bad-first-layer.jpg)
+![](pictures/2022-11-05/12_bad-first-layer.jpg)
 
 Times are hard, I lost track of time, but I think including breaks I spent
 around 12h (wat) on the printer today, all of it on configuration.
@@ -1000,7 +1000,7 @@ low so that I can hear the nozzle scratch over the surface if I don’t calibrat
 it quickly enough. Bed is at 110°C, chamber at 44°C, still I’m getting results
 like this test piece (single .2mm layer rectangle):
 
-![](pictures/2022-11-06_1_terrible-first-layer.jpg)
+![](pictures/2022-11-06/1_terrible-first-layer.jpg)
 
 Before I can fix this issue, there’s no way I can print e.g. the Nevermore.
 
@@ -1051,7 +1051,7 @@ fine. The next day, stepper A (right) would only vibrate, not move. What!
 While at it I also put in the cover for the exhaust slot, replacing my not very
 sturdy cardboard-and-adhesive-tape construction.
 
-![](pictures/2022-11-08_1_back-cover.jpg)
+![](pictures/2022-11-08/1_back-cover.jpg)
 
 ## 24V relay (1h45m)
 
@@ -1062,7 +1062,7 @@ terminals so hard if you can open them you’ll be crowned king of England.
 Anyway, I wired it in, gating the AC input to the 24V PSU. Wiring is easy when
 you’re shameless, so here’s how that looks now:
 
-![](pictures/2022-11-08_2_24v-relay.jpg)
+![](pictures/2022-11-08/2_24v-relay.jpg)
 
 An explanation is in order!
 
@@ -1119,7 +1119,7 @@ down, and I never have to shut down my Raspi anymore. Clicking the button
 audibly toggles the relay, and soon enough the LEDs on the Stealthburner light
 up.
 
-![](pictures/2022-11-08_3_24v-software-toggle.png)
+![](pictures/2022-11-08/3_24v-software-toggle.png)
 
 I spent a total 1h45m on this.
 
@@ -1148,7 +1148,7 @@ with the Mainsail preview of the GCode I counted the lines, and settled for
 
 [ellis-pressure-advance]: https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/pressure_advance.md
 
-![](pictures/2022-11-09_1_pressure-advance.jpg)
+![](pictures/2022-11-09/1_pressure-advance.jpg)
 
 # 2022-11-10
 
@@ -1168,7 +1168,7 @@ with a special side mount. The nozzle can just barely touch the brush so the
 layout is fine for now. I did not configure the firmware to use the
 decontaminator yet though, so this will have to wait until later.
 
-![](pictures/2022-11-10_1_decontaminator.jpg)
+![](pictures/2022-11-10/1_decontaminator.jpg)
 
 # Electronics fans (εm)
 
@@ -1178,7 +1178,7 @@ levels, I decided to revert to the old temperature measurements, and having them
 as manually controlled fans in the firmware. PID is something I can worry about
 in the future.
 
-![](pictures/2022-11-10_2_electronics-fans.jpg)
+![](pictures/2022-11-10/2_electronics-fans.jpg)
 
 Oops, I just noticed the purge bucket collides with the Klicky when homing Z. A
 problem for another day, for now I’m simly removing the bucket.
@@ -1202,7 +1202,7 @@ Since I had to take the bed out to install it, I also took the opportunity to
 route the bed cables through the hole in the base plate (it was previously going
 through the drag chain hole).
 
-![](pictures/2022-11-13_1_nevermore.jpg)
+![](pictures/2022-11-13/1_nevermore.jpg)
 
 The filter wouldn’t start on the first attempt because the cable had the wrong
 polarity; the removal of the cables from the JST plug again was a bit difficult,
@@ -1218,7 +1218,7 @@ cleanly pry off the rest of the bucket so that it is less high on one side. This
 fixes the Klicky issue, without having to do any CAD modding. I also put some
 Acetone onto the wound to make it heal better. Get well soon, purge bucket.
 
-![](pictures/2022-11-13_2_purge-bucket.jpg)
+![](pictures/2022-11-13/2_purge-bucket.jpg)
 
 Times:
   - Mechanical: 20h15m + 45m (Nevermore) + 15m (purge bucket) = 21h15m
@@ -1233,7 +1233,7 @@ Times:
 This is not something I did today, but since I used it yesterday during a
 partially failed print, here’s how Klipper’s Exclude Object functionality works.
 
-![](pictures/2022-11-15_1_exclude-object-gui.png)
+![](pictures/2022-11-15/1_exclude-object-gui.png)
 
 Simply click on the part you want to stop (first layer issues, not needed
 anymore, etc.) and it will be ignored during the remainder of the print.
@@ -1285,19 +1285,19 @@ Today I mounted the display, and also put the breakout PCB onto a DIN clamp that
 did not involve a ziptie. The config I simply copied from a friend, which didn’t
 really cost me any time.
 
-![](pictures/2022-11-19_1_display.jpg)
+![](pictures/2022-11-19/1_display.jpg)
 
 ## Rewiring (1h30m)
 
 Next stop was something I had postponed _many_ times, cleaning up the wiring.
 
-![](pictures/2022-11-19_2_wiring-before.jpg)
+![](pictures/2022-11-19/2_wiring-before.jpg)
 
 The motors are the closest to the bed, one layer above are the sensors and the
 breakout PCB cables. It wasn’t terrible to do, but I would lie if I said it was
 a lot of fun. Still, it looks much cleaner already.
 
-![](pictures/2022-11-19_3_wiring-after.jpg)
+![](pictures/2022-11-19/3_wiring-after.jpg)
 
 I haven’t touched the AC/DC wiring much, that will have to wait until another
 time.
@@ -1389,7 +1389,7 @@ To avoid too much smoothing with '3hump_ei', suggested max_accel <= 5700 mm/sec^
 Recommended shaper is mzv @ 48.8 Hz
 ```
 
-![](pictures/2022-11-19_4_input-shaping-x.png)
+![](pictures/2022-11-19/4_input-shaping-x.png)
 
 ```
 Fitted shaper 'zv' frequency = 40.8 Hz (vibrations = 30.4%, smoothing ~= 0.097)
@@ -1405,7 +1405,7 @@ To avoid too much smoothing with '3hump_ei', suggested max_accel <= 1500 mm/sec^
 Recommended shaper is 2hump_ei @ 48.6 Hz
 ```
 
-![](pictures/2022-11-19_5_input-shaping-y.png)
+![](pictures/2022-11-19/5_input-shaping-y.png)
 
 The physicist in me is fastinated with the fact that the two axes have different
 algorithm recommendations, most likely because the y axis has a lot more mass to
@@ -1534,7 +1534,7 @@ ListPlot[
 ]
 ```
 
-![](pictures/2022-11-24_1_flow-testing.png)
+![](pictures/2022-11-24/1_flow-testing.png)
 
 What do I see?
 
