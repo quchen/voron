@@ -1161,12 +1161,13 @@ The decontaminator is a little brush with a bucket next to it. The idea is to
 extrude some filament, wipe the nozzle on the brush, and have a clean start
 without ooze guaranteed before every print. Installation is simple enough. It
 even comes with slots for magnets so it snaps into place, if only my screws were
-magnetic. Another benefit I can’t use is that it allows tiny screws to stick out
-ontop that act as a PEI sheet stopper, but my screws are too short, so I’m not
-having any of that. The brush is where the Klicky used to be, which I relocated
-with a special side mount. The nozzle can just barely touch the brush so the
-layout is fine for now. I did not configure the firmware to use the
-decontaminator yet though, so this will have to wait until later.
+magnetic (Note from the future: they’re M3x8 ones). Another benefit I can’t use
+is that it allows tiny screws to stick out ontop that act as a PEI sheet
+stopper, but my screws are too short, so I’m not having any of that. The brush
+is where the Klicky used to be, which I relocated with a special side mount. The
+nozzle can just barely touch the brush so the layout is fine for now. I did not
+configure the firmware to use the decontaminator yet though, so this will have
+to wait until later.
 
 ![](pictures/2022-11-10/1_decontaminator.jpg)
 
@@ -1316,6 +1317,8 @@ mechanically (can’t buy a new one if I fry it). I followed
 [the guide in the Klipper docs][klipper-measuring-resonances] and verified the
 Raspi pinout with another website.
 
+![](pictures/2022-11-20/1_accelerometer-wiring.jpg)
+
 [klipper-measuring-resonances]: https://www.klipper3d.org/Measuring_Resonances.html
 
 Cool, let’s go. No smoke when starting the Raspi, excellent.
@@ -1447,7 +1450,8 @@ perimeters, the settings for those in the end were:
 
 - Default speed: 200 mm/s
 - Perimeter speed: Internal 100% (of default), external 50% (of internal)
-- Infill speed: Solid 120%, Sparse 100% (of solid, so 120% default), top solid 50% (of solid, so 60% of default).
+- Infill speed: Solid 120%, Sparse 100% (of solid, so 120% default), top solid
+  50% (of solid, so 60% of default).
 
 ### Acceleration
 
@@ -1462,7 +1466,7 @@ Times:
   - Software: 20h45m + 2h = 22h45m
   - Total: 62h + 2h = 64h
 
-# 2022-11-{24,25}
+# 2022-11-{23,24}
 
 ## No more adhesion problems (15m)
 
@@ -1485,7 +1489,7 @@ cheapo scale is actually, but here’s the data as read from it with the standar
 Phaetus 0.4mm nozzle:
 
 | Flow [mm³/s] | Mass [mg] | Comment |
-| ------------ | --------- | ------- |
+| ------------:| ---------:| ------- |
 | 10.0         | 514       |
 | 11.0         | 518       |
 | 12.0         | 512       |
@@ -1508,7 +1512,7 @@ figured out skipping happens around 25mm³/s, so I’ll space my measurements ou
 bit.
 
 | Flow [mm³/s] | Mass [mg] | Comment |
-| ------------ | --------- | ------- |
+| ------------:| ---------:| ------- |
 | 10.0         | 510       |
 | 12.0         | 512       |
 | 14.0         | 521       |
@@ -1526,6 +1530,8 @@ bit.
 This is the data as simple plot,
 
 ```mathematica
+phaetus = {{10.0, 514}, {11.0, 518}, …}
+cht = {{10.0, 510}, {12.0, 512}, …}
 ListPlot[
     {phaetus, cht},
     AxesOrigin -> {10, 450},
@@ -1544,3 +1550,72 @@ What do I see?
 - Bondtech CHT has much higher flow limits
 - Statistics here are really bad, but data is good enough so I can increase my
   flow rate limit in the slicer to 20mm³/s with the CHT nozzle
+
+# 2022-11-25
+
+## No more time keeping
+
+The printer is now reasonably well-working, I’ve applied for a serial number a
+week ago (but haven’t received it yet), and I consider the build done. This
+being a hobby project it won’t be finished anytime soon, but I’ve decided it’s
+not a good idea to keep a total time anymore. I’ll annotate headlines with time
+spent if applicable, but the times section is gone from now on.
+
+## Sanded PEI sheet texture
+
+The sanded PEI sheet is gicing me problems. Adhesion is very strong, but the
+surface finish is sometimes a bit off-black, maybe because of stretching when
+pulling it off? Also previous prints leave their mark, so maybe this is a bit of
+a high-maintenance mod if I have to re-sand it frequently.
+
+## First layer calibration
+
+I printed a 1-layer box to check my first layer, and also to clean it as a side
+effect. I noticed some interference patterns, indicating a nozzle too close to
+the bed. Indeed, adjusting the Z offset by 0.1mm (to a total of +0.8mm) solved
+the issue and gave me a very nice first layer. It seems like there’s still an
+issue with my Z calibration script.
+
+![](pictures/2022-11-25/1_interference-pattern.jpg)
+
+On the other hand, holding the layer against the light shows some gaps,
+indicating not being close enough to the bed. I should do a new bed mesh!
+
+![](pictures/2022-11-25/2_first-layer-gaps.jpg)
+
+
+# 2022-11-26 Cleanup day (4h)
+
+Today I did some of the tasks I postponed for way too long. None of these were
+strictly necessary, but I decided to spend some time getting them off my
+concience. Most importantly, the printer looks finished now.
+
+![](pictures/2022-11-26/1_full-frontal-shot.jpg)
+
+## Chamber cable management
+
+I didn’t exactly go overboard with zipties on the build, and some cables were
+routed when the zip ties were already in place. The Y-to-X transition on the
+gantry now doesn’t have any loose ends anymore, the chamber thermistor is now on
+the cable chain guide and properly routed (it was just inside the cable chain
+before), and the back-left motor has its cables tucked in the gantry extrusion
+using [these](https://www.thingiverse.com/thing:2246832) clips.
+
+![](pictures/2022-11-26/2_gantry-wiring-cleanup.jpg)
+
+![](pictures/2022-11-26/4_x-axis-cable-management.jpg)
+
+![](pictures/2022-11-26/5_chamber-thermistor.jpg.jpg)
+
+## PEI endstops
+
+The purge bucket mod has holes in its parts to put screws in that serve as an
+endstop for the PEI sheet, so that I don’t have to carefully put it in straight
+and avoiding the Sexbolt and nozzle brushes.
+
+![](pictures/2022-11-26/3_pei-sheet-endstop.jpg)
+
+## Other
+
+I also did some wiring cleanup in the electronics compartment and installed the
+frontal skirts. The next print will be the back and left side skirts.
