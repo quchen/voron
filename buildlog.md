@@ -650,8 +650,6 @@ knows). Seriously, fuck the UX and manpages of _so many_ Linux tools.
 
 ![](pictures/2022-11-04/3_stealthburner-leds.jpg)
 
-!!! 2h, already entered into timesheet
-
 ### Fans
 
 The fans worked right away. The part cooling fan can be controlled, the hotend
@@ -921,6 +919,9 @@ Now that the gantry is level, it’s time for having a look at the bed!
 
 0.071mm variance. I don’t know whether that is very good, but it certainly isn’t
 terrible considering it’s well below a typical layer height.
+
+**Note from the future:** I should have written down how I did this. Simply
+click the _Calibrate_ button in Klipper?
 
 ## Test print? Test print!
 
