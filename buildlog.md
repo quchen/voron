@@ -1602,11 +1602,17 @@ the cable chain guide and properly routed (it was just inside the cable chain
 before), and the back-left motor has its cables tucked in the gantry extrusion
 using [these](https://www.thingiverse.com/thing:2246832) clips.
 
+
 ![](pictures/2022-11-26/2_gantry-wiring-cleanup.jpg)
 
 ![](pictures/2022-11-26/4_x-axis-cable-management.jpg)
 
-![](pictures/2022-11-26/5_chamber-thermistor.jpg.jpg)
+A note on the thermistor, the cable was too short to route it along the rest of
+the breakout-to-gantry cables. Avoiding the detour by threading it through the
+bed hole gave me enough slack, so that’s why there’s a black cable going from
+beneath the bed to the Z drag chain. You can see this in the picture of the PEI endstop nails in the next section.
+
+![](pictures/2022-11-26/5_chamber-thermistor.jpg)
 
 ## PEI endstops
 
