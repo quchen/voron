@@ -1626,3 +1626,23 @@ and avoiding the Sexbolt and nozzle brushes.
 
 I also did some wiring cleanup in the electronics compartment and installed the
 frontal skirts. The next print will be the back and left side skirts.
+
+# 2022-11-27
+
+## Ground your frame, dumbass
+
+**Note to the past.** The 24Vcc wire loosened when doing the wiring and settled
+against the frame when I reassembled it. Nothing happened, but had it grounded
+itself through me that wouldn’t have been a lot of fun, neither for me nor for
+the electronics.
+
+## Manual fans again
+
+Enabled manual fans for the electronics compartment again, for two main reasons:
+
+1. The motor drivers don’t have their temperature monitored. They should get
+   some constant cooling though. Basing the Octopus-facing fan on its MCU
+   temperature simply uses the wrong temperature measurement.
+2. It’s annoying to have the fans go on and off, much more so than them running
+   at a constant 25% or so.
+
