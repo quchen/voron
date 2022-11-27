@@ -296,6 +296,11 @@ cable is straight up past the belts and then into a groove made for just that,
 and considered just routing it outside. The Voron devs thought of everything it
 seems!
 
+**Note from the future:** The Klicky holder isn’t parallel to, well, anything.
+Make sure when checking the Klicky later that it’s parallel to the bed,
+otherwise the effective switch height will be different, which gave me nozzle
+calibration issues bad enough to visibly scratch my bed with the nozzle.
+
 ![](pictures/2022-10-31/4_klicky-probe.jpg)
 
 Bolted on the front, and mechanical assembly is done! It looks like a Voron now!
@@ -1004,6 +1009,10 @@ like this test piece (single .2mm layer rectangle):
 ![](pictures/2022-11-06/1_terrible-first-layer.jpg)
 
 Before I can fix this issue, there’s no way I can print e.g. the Nevermore.
+**Note from the future:** The Klicky mount on the toolhead was at an angle, so
+the Klicky wasn’t parallel to the bed. This resulted in a wrong effective switch
+height, and messed up the Z calibration. The fix was done on 2022-11-07, but is
+only briefly mentioned in the buildlog.
 
 Times:
   - Mechanical: 16h15m + 1h (panels) = 17h15m
@@ -1018,9 +1027,11 @@ then seeing it detach, to decent quality:
 
 1. Clean the print sheet with soap, rinse, then clean with IPA. I think this one
    was the most important.
-2. Fixing the Klicky so that the first layer is okay. I now have
-   printed-part-visible scratches on the smooth PEI sheet. Oh well, it’s now my
-   spoil board.
+2. Fixing the Klicky so that the first layer is okay. The switch is now parallel
+   to the print bed when attached. I now have printed-part-visible scratches on
+   the smooth PEI sheet from when it wasn’t level. Oh well, it’s now my spoil
+   board. **Note from the future:** Tried getting a replacement sheet, out of
+   stock everywhere. Restocking will take at least a month. Argh.
 3. Extrusion factor 90% for ABS.
 
 I printed the blind cover for the exhaust hole with tolerable quality, the fan
