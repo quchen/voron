@@ -4,3 +4,6 @@
 [submodule "manuals/voron-2"]
 	path = manuals/voron-2
 	url = git@github.com:VoronDesign/Voron-2.git
+[submodule "mods/tap-toolhead-mount"]
+	path = mods/tap-toolhead-mount
+	url = git@github.com:VoronDesign/Voron-Tap.git
