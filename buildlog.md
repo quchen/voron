@@ -1613,8 +1613,12 @@ the cable chain guide and properly routed (it was just inside the cable chain
 before), and the back-left motor has its cables tucked in the gantry extrusion
 using [these](https://www.thingiverse.com/thing:2246832) clips.
 
-
 ![](pictures/2022-11-26/2_gantry-wiring-cleanup.jpg)
+
+**Note from the future:** The back of the zip tie in the above picture rubs
+against the gantry belts and is _terrible_ placement. Once I figured this out
+(2022-12-03) I saw some abrasion on the back plate, and cut it off during a
+print to avoid any further damage to the belts.
 
 ![](pictures/2022-11-26/4_x-axis-cable-management.jpg)
 
