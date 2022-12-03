@@ -1657,3 +1657,67 @@ Enabled manual fans for the electronics compartment again, for two main reasons:
 2. It’s annoying to have the fans go on and off, much more so than them running
    at a constant 25% or so.
 
+# 2022-{11-28 .. 12-03}
+
+## Adhesive tape based hinges (1h)
+
+There are some pretty cool hinges around that are removable and use magnetic
+joints instead of screws, making them easily removable. Unfortunately the tape
+doesn’t seem to work well with my full frontal door, the design is probably only
+suitable for two half doors with much less mass and leverage. I’ve removed the
+hinges again, and will probably use some with drilled holes for added stability
+in the future. For now, it’s back to using panel clamps for the door.
+
+![](pictures/2022-11-28/1_taped-magnetic-hinges.jpg)
+
+## LED strips for chamber illumination (3h)
+
+I got these 10W/m LED strips from a friend, who had them left over from their
+Voron. They are only white but pretty bright. I cut them into four 350mm strips
+and [printed some rails][voronmods-franz] so they fit into the extrusions
+nicely. I’ll also put nail polish onto the intermediate contacts so there’s an
+additional layer of isolation between them and the extrusion (in addition to
+physical distance and the coating, but I feel nail polish is very simple and the
+only part that’s fully under my control).
+
+[voronmods-franz]: https://github.com/fmthoma/voron-mods
+
+![](pictures/2022-11-28/2_led-strips-overview.jpg)
+
+After soldering them together – ideally using crossing wires so they bend nicer
+around corners, which I forgot for the first connection – they look like this
+when tested on a heater port:
+
+![](pictures/2022-11-28/3_led-strips-test.jpg)
+
+This is 1% brightness. 10% is uncomfortable to look at, and 100% is stupidly
+bright. Sure, the panels eat some of the light, but I think 10% will be _plenty_
+of light for normal operation.
+
+Right now, they’re hanging out to dry, which gives me some time to write this.
+o:-) Meanwhile I have to prepare mentally for undoing some of the very first
+screws I added: the LEDs require removing the top square of the frame for
+assembly. Loosen Z belts, take frame apart, insert LEDs, carefully reassemble
+frame, easy (I hope, bit stressed about this to be honest).
+
+![](pictures/2022-11-28/4_throwback-to-the-very-beginning.jpg)
+
+It wasn’t so hard it turns out! I just wish I had made my wires (50mm) a bit
+longer. They are pretty much exactly long enough when in place, but a bit
+annoying to install. The whole process was a bit awkward, but didn’t take too
+long and was also a nice fun throwback to working on the frame a month and some
+80-very-ish project hours ago.
+
+And now, fiat lux!
+
+![](pictures/2022-11-28/5_fiat-lux.jpg)
+
+The LEDs actually flicker quite a bit when the heater is running, because they
+are driven by the 3rd heater’s PWM slot. Increasing the PWM frequency from
+Klipper’s standard of 10Hz to 100Hz solves the issue though.
+
+Afterwards I had some problems with the part cooling fan, it would not turn
+well, and only wobble a bit during kickstart. I played with the parameters a bit
+and at some point the problem resolved, and the fan worked even with the old
+parameters. The problem seems to be solved, but I’ll have to keep an eye open
+for something like this happening during a print!
