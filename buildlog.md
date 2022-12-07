@@ -225,7 +225,7 @@ at the [gantry squaring guide by Andrew Ellis][gsq], which features a couple
 more steps, but also assumes wiring for many. It looks like a (chapter from a
 much more extensive) great guide that I’ll revisit at a later point.
 
-[gsq]: https://github.com/AndrewEllis93/Print-Tuning-Guide/blob/main/articles/voron_v2_gantry_squaring.md
+[gsq]: https://ellis3dp.com/Print-Tuning-Guide/articles/voron_v2_gantry_squaring.html
 
 Oh, plus five minutes to tension the gantry bolts, almost forgot! And lol quite
 a few of them were _loose_.
@@ -1725,3 +1725,54 @@ well, and only wobble a bit during kickstart. I played with the parameters a bit
 and at some point the problem resolved, and the fan worked even with the old
 parameters. The problem seems to be solved, but I’ll have to keep an eye open
 for something like this happening during a print!
+
+
+# 2022-12-05 Extrusion multiplyer tuning
+
+I’ve never really tuned my extrusion multiplier, so I used
+[Andrew Ellis’ instructions][ellis-em-tuning] for doing so. A friend told me
+this is a good idea to do per filament brand; the red one in the picture is from
+Polymaker, so far I’ve also used eSun a lot. The result isn’t very conclusive
+though, I’ll keep my 0.94 multiplier. 0.92 has better surface smoothness but
+worse perimeter adhesion; the difference isn’t that big to worry about though.
+
+![](pictures/2022-12-05/1_extrusion-multiplier-boxes.jpg)
+
+[ellis-em-tuning]: https://ellis3dp.com/Print-Tuning-Guide/articles/extrusion_multiplier.html
+
+
+# 2022-12-06
+
+Sometimes when doing Z lifts of 5cm or so, I heard something like a skip. I
+couldn’t make out the location and the prints were fine. Until they weren’t and
+I had a proper ugly layer. Turns out the back right Z belt from the motor to the
+big gear wheel was very loose! I re-tightened those loops by loosening the motor
+and foot screws, realigning them, and fastening them with proper tension. Now
+all the short Z loops make an audible sound when plucked again. Especially the
+offending belt was quite wobbly before.
+
+This also explains why I had trouble with the nozzle being too close on prints
+on the back right: the motor would simply lose a couple of steps until the
+gantry is kind of carried by the remaining three motors only!
+
+![](pictures/2022-12-06/1_bad-z-motor.jpg)
+
+The Part cooling fan is still giving me trouble; I was hoping for a bad contact
+in the Stealthburner PCB and re-plugged the plug, but that didn’t change its
+behavior. It still sometimes goes on and off without good cause.
+
+# 20222-12-07
+
+In today’s episode of convenience mods that I should have added much earlier:
+I’ve installed front door hinges. No longer do I have to take the front off in
+order to access the internals. Installation was done by having the door attached
+as before, adding the hinges, temporarily securing them with adhesive tape, and
+then drilling the holes in the right spots halfway through. Then I took off the
+taped hinges, finished the holes, and attached the screw counter plates. Socket
+head screws were unfortunately too big and collided with the belt tensioning
+units that move up and down with the gantry, so I had to opt for flat head
+screws. The kit only comes with M3x6 which are too short, I bought M3x8 which
+work, but I think the best fit would have been M3x10. The door is well-secured
+though, so I don’t think I’ll ever have to change the screws.
+
+![](pictures/2022-12-07/1_hinges.jpg)
