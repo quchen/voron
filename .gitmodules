@@ -7,3 +7,6 @@
 [submodule "mods/tap-toolhead-mount"]
 	path = mods/tap-toolhead-mount
 	url = git@github.com:VoronDesign/Voron-Tap.git
+[submodule "manuals/stealthburner"]
+	path = manuals/stealthburner
+	url = https://github.com/VoronDesign/Voron-Stealthburner
