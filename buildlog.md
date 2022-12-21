@@ -1884,3 +1884,10 @@ are quite impressive:
 - average -0.848713
 - median -0.848750
 - standard deviation 0.002684
+
+## Macro fine-tuning (30min)
+
+Tap works, but now it needs to be incorporated into the printing macros! In
+particular, I don’t want a 260°C nozzle directly on my bed. The solution is to
+add some logic to the `activate_gcode` part of the `[probe]` section that makes
+sure the temperatures are right.
