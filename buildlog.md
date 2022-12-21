@@ -1776,3 +1776,111 @@ work, but I think the best fit would have been M3x10. The door is well-secured
 though, so I don’t think I’ll ever have to change the screws.
 
 ![](pictures/2022-12-07/1_hinges.jpg)
+
+
+# 20222-12-{20,21} Tap
+
+The PCB and parts kit arrived, let’s build this!
+
+## Assembly outside of the printer (1h)
+
+![](pictures/2022-12-20/1_tap-parts.jpg)
+
+Like all good things, it starts with heat set inserts, then following the
+manual. As usual, it gives instructions, but doesn’t justify them. For example,
+why leave those 2.5mm gap on two of the screws? Well, it’s where the hotend
+module attaches to, but it won’t tell you that.
+
+The PCB I ordered had the connector’s pins stand out a bit too much on the back,
+so I had to cut them off to make the back of the PCB pretty much flush. Holes
+and screws were decently sized, the magnets are a nice press fit (with an
+additional drop of glue).
+
+Unfortunately, the Tap can’t be fully assembled and then inserted: since the
+linear rail carriage covers the screws that attach the print head to the X
+carriage, it has to be installed before fully assembling the unit.
+
+![](pictures/2022-12-20/2_tap-assembled.jpg)
+
+## Assembly inside of the printer (45m)
+
+Taking things apart that haven’t been taken apart for a while is always a bit of
+an uneasy nostalgia.
+
+![](pictures/2022-12-20/3_toolhead-disassembly.jpg)
+
+Threading the belts is a bit finnicky, but at least there’s enough slack in the
+tightening screws so that it’s not too bad. I didn’t detach the toolhead fully,
+giving me less room to work, but I think this was the better choice. Removing
+the Klicky JST connector was surprisingly hard, because the PCB is very tight.
+
+Anyway, mechanical assembly is done, I now have a red element in my printer
+that’s not that easy to remove so I kind of _have_ to switch to my red/blue
+color scheme at some point.
+
+## Electronics (2h15m)
+
+The Klicky connector had two wires, the optical sensor has three, so I cannot
+just swap cables and be done with it. Crimping little Plugs is not a friend of
+mine (or my tools?). I estimated the wire length using an old piece of filament
+as tester, it came out at 95mm. I forgot taking a picture of the PCB’s pinout,
+but luckily it’s printed on it so it can be seen when lifting the tap a bit,
+lucky me!
+
+Pinouts:
+
+  - Sensor PCB, top to bottom: Vcc, signal, GND. Bump pointing to the printer’s
+    back.
+  - MagicPhoenix toolhead PCB: VCC, signal, GND. Bump pointing to the printer’s
+    front.
+
+So the cable has to be crimped just parallel, with both bumps looking up on the
+table.
+
+My crimping pliers are _shit_, I think they’re made for much bigger connectors.
+Anyway, I can’t get the crims right, so my fallback is a makeshift crimp using
+normal pliers, and then soldering the connectors on. 1h15m spent on crimping,
+recrimping, soldering, blocking the crimps with soldering tin.
+
+Another hour on electronics the next day. Since the new probe is a 3-wire one,
+the old probe cable from the Octopus to the breakout PCB didn’t work anymore,
+since it now needs to connect to PROBE1 (formerly PROBE0). Since the power
+supply is by the breakout PCB anyway, I simply created a short adapter.
+
+![](pictures/2022-12-20/4_probe-adapter.jpg)
+
+Booted it up, everything works! There’s even an LED on the PCB that indicates
+whether the trigger is active; it lights up red when the optical sensor is
+triggered (which it is, by default).
+
+![](pictures/2022-12-20/5_tap-toolhead.jpg)
+
+No worries about the broken bottom of the Stealthburner front though, that was a
+little accident a few days ago (had stuff in the chamber while homing), and is
+unrelated to Tap.
+
+## Configuration (1h)
+
+Software-wise the configuration is alright, Klipper doesn’t allow using the same
+pin twice, so Z homing gets the special virtual pin `probe:z_virtual_endstop`.
+First tests were with a catron tube that once held my toilet paper (cheaper to
+crash into that one than the bed), but all tests ran smoothly, and I quickly
+went to live Z homing and QGL.
+
+Calibrating the Z switch offset is maybe the most important step. With a probe
+offset of zero, Z homed, and a flashlight behind the nozzle, I found the Z value
+when the nozzle seems to start touching the bed: between 0.8 and 0.9mm. I then
+tried to fine-tune it using a feeler gauge, and I could push the 0.03mm one
+under the nozzle starting around 0.88mm Z position. This matches my flashlight
+estimation of 0.85mm, so that’s the value I’m using as my probe offset: `-0.85`,
+because the probe triggers when it’s below the bed (tap raised).
+
+With everything in place, time for a `PROBE_ACCURACY samples=100`! The results
+are quite impressive:
+
+- maximum -0.841250
+- minimum -0.853750
+- range 0.012500
+- average -0.848713
+- median -0.848750
+- standard deviation 0.002684
