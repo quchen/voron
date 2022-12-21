@@ -1891,3 +1891,20 @@ Tap works, but now it needs to be incorporated into the printing macros! In
 particular, I don’t want a 260°C nozzle directly on my bed. The solution is to
 add some logic to the `activate_gcode` part of the `[probe]` section that makes
 sure the temperatures are right.
+
+## Fallout
+
+I reduced the probing sample size to one thanks to the Tap’s accuracy, making
+QGL and bed meshing much quicker. The bed mesh shows a funny feature: the back
+left is wonky! It looks like the nozzle brush is actually interfering with the
+hotend. Investigating the config showed that there was still an offset for the
+Klicky built in. Removed the offsets so that the bed is now probed at (5,5) to
+(245,245).
+
+## Finetuning probe offset
+
+The probe offset can be measured, but I don’t want accurately measured first
+layers, I want well printed first layers. I sliced a one layer high square and
+printed it with various Z offsets. +0.10mm yielded a very gappy first layer,
++0.05mm had too much plastic for the height, +0.06mm was just right. The new
+offset is thus `-0.85 + 0.06 = -0.79`.
