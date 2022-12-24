@@ -1908,3 +1908,10 @@ layers, I want well printed first layers. I sliced a one layer high square and
 printed it with various Z offsets. +0.10mm yielded a very gappy first layer,
 +0.05mm had too much plastic for the height, +0.06mm was just right. The new
 offset is thus `-0.85 + 0.06 = -0.79`.
+
+Turns out this value was a bit off, and once again following Andrew Ellis’ print
+guide I settled on an experimentally determined value of `-0.945`. I simply
+sliced a 25mm×25mm×0.2mm cuboid and printed 9 of them in a square pattern, and
+modified the Z offset when the printer switched to the next one using direct
+display controls (which set values in Klipper directly and don’t have to wait
+for the firmware pipeline to clear).
