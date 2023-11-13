@@ -6,7 +6,7 @@ import subprocess
 import sys
 
 voron_user = "pi"
-voron_address = "voron.local"
+voron_address = "voron"
 
 local_prefix = os.path.realpath(os.path.dirname(__file__))
 voron_home = f"/home/{voron_user}"
